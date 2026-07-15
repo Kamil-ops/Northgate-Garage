@@ -1,0 +1,750 @@
+﻿<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Car Care Advice &amp; Garage Guides | Northgate Garage Watford</title>
+<meta name="description" content="Plain-English advice about MOTs, servicing, brakes, warning lights, air conditioning and EV maintenance from Northgate Garage in Watford.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  "name": "Northgate Garage Car Care Guides",
+  "description": "Plain-English MOT, maintenance, repair and EV advice for drivers in Watford.",
+  "publisher": { "@type": "AutoRepair", "name": "Northgate Garage", "telephone": "+441632960123" },
+  "inLanguage": "en-GB"
+}
+</script>
+<style>
+:root{
+  --ink:#0E1217; --ink-2:#161D26; --ink-3:#232C38; --ink-line:#2B3543;
+  --orange:#FF6A15; --orange-2:#FF8A3A; --orange-dark:#E65200;
+  --chalk:#ECEDEA; --steel:#48535F; --steel-light:#6E7A86;
+  --green:#12A06B; --gold:#F5A200; --white:#FFFFFF; --line:#E1E3DE; --line-2:#ECEEE9;
+  --plate:#FFD400;
+  --grad-orange:linear-gradient(180deg,#FF8A3A 0%,#F15C05 100%);
+  --grad-ink:linear-gradient(180deg,#161D26 0%,#0E1217 100%);
+  --sh-sm:0 1px 2px rgba(14,18,23,.06),0 4px 12px rgba(14,18,23,.05);
+  --sh-md:0 10px 26px rgba(14,18,23,.10),0 3px 8px rgba(14,18,23,.06);
+  --sh-lg:0 30px 70px rgba(14,18,23,.24);
+  --sh-orange:0 8px 20px rgba(230,82,0,.22);
+  --font-head:'Barlow Condensed',Impact,sans-serif;
+  --font-body:'Inter',system-ui,-apple-system,sans-serif;
+  --z-header:50; --z-drop:55; --z-bar:60; --z-modal:100;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{font-family:var(--font-body);color:var(--steel);background:var(--chalk);line-height:1.62;font-size:16px;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+h1,h2,h3{font-family:var(--font-head);text-transform:uppercase;color:var(--ink);line-height:1;letter-spacing:-.01em;font-weight:700;text-wrap:balance}
+h2{font-size:clamp(32px,5vw,50px);margin-bottom:10px}
+p{text-wrap:pretty}
+.kicker{display:inline-flex;align-items:center;gap:11px;font-family:var(--font-body);font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--orange);margin-bottom:18px}
+.kicker::before{content:"";width:26px;height:2px;background:var(--orange);border-radius:2px}
+.wrap{max-width:1140px;margin:0 auto;padding:0 22px}
+section{padding:clamp(72px,9vw,116px) 0}
+a{color:inherit}
+img,svg{display:block}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-family:var(--font-body);font-weight:600;font-size:15.5px;letter-spacing:.005em;padding:15px 28px;border-radius:9px;border:0;cursor:pointer;text-decoration:none;min-height:50px;transition:background .2s ease,transform .14s cubic-bezier(.2,.7,.3,1),box-shadow .2s ease,border-color .2s ease}
+.btn:active{transform:translateY(0) scale(.985)}
+.btn:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid var(--orange);outline-offset:3px}
+.btn svg{transition:transform .2s ease}
+.btn-primary{background:var(--grad-orange);color:#1A0E04;box-shadow:var(--sh-orange)}
+.btn-primary:hover{background:linear-gradient(180deg,#FF9648 0%,#F76A12 100%);transform:translateY(-2px);box-shadow:0 12px 26px rgba(230,82,0,.28)}
+.btn-primary:hover svg{transform:translateX(3px)}
+.btn-dark{background:var(--ink);color:var(--white);box-shadow:var(--sh-md)}
+.btn-dark:hover{background:#050709;transform:translateY(-2px);box-shadow:0 16px 34px rgba(14,18,23,.4)}
+.btn-ghost{background:transparent;color:var(--white);border:1.5px solid rgba(255,255,255,.28)}
+.btn-ghost:hover{border-color:var(--orange);color:#fff;transform:translateY(-2px)}
+.btn-primary:active,.btn-dark:active,.btn-ghost:active{box-shadow:none}
+
+.skip-link{position:absolute;left:-999px;top:0;background:var(--orange);color:#1A0E04;padding:10px 16px;z-index:200;font-weight:700;text-decoration:none;border-radius:0 0 8px 0}
+.skip-link:focus{left:0}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{transition:none!important;animation:none!important}
+}
+.rv{opacity:0;transform:translateY(24px);transition:opacity .6s cubic-bezier(.2,.7,.3,1),transform .6s cubic-bezier(.2,.7,.3,1)}
+.rv.in{opacity:1;transform:none}
+.related-card .go{display:inline-flex;transition:transform .2s ease}
+.related-card:hover .go{transform:translateX(5px)}
+.faq-list details[open] summary~*{animation:faqOpen .3s ease}
+@keyframes faqOpen{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+
+/* Header */
+.site-header{position:sticky;top:0;z-index:var(--z-header);background:rgba(14,18,23,.86);backdrop-filter:saturate(140%) blur(12px);-webkit-backdrop-filter:saturate(140%) blur(12px);border-bottom:1px solid var(--ink-line);transition:box-shadow .25s,background .25s}
+.site-header.scrolled{box-shadow:0 10px 30px rgba(0,0,0,.34);background:rgba(11,14,19,.94)}
+.site-header .wrap{display:flex;align-items:center;gap:22px;height:72px;transition:height .25s}
+.site-header.scrolled .wrap{height:62px}
+.logo{display:flex;align-items:center;gap:11px;text-decoration:none;margin-right:auto}
+.logo-mark{width:40px;height:40px;background:var(--grad-orange);border-radius:9px;display:flex;align-items:center;justify-content:center;box-shadow:0 5px 14px rgba(230,82,0,.26)}
+.logo-name{font-family:var(--font-head);font-weight:700;font-size:25px;color:var(--white);text-transform:uppercase;letter-spacing:.01em;line-height:1}
+.logo-name span{color:var(--orange)}
+nav.main-nav{display:flex;align-items:center;gap:28px}
+nav.main-nav a{color:#AEB8C2;text-decoration:none;font-size:14.5px;font-weight:500;position:relative;padding:4px 0}
+nav.main-nav a::after{content:"";position:absolute;left:0;bottom:-2px;width:0;height:2px;background:var(--orange);transition:width .22s ease}
+nav.main-nav a:hover{color:var(--white)}
+nav.main-nav a:hover::after{width:100%}
+.nav-drop{position:relative}
+.nav-drop::after{content:"";position:absolute;top:100%;left:-12px;right:-12px;height:18px}
+.nav-drop-btn{background:none;border:0;padding:4px 0;cursor:pointer;font-family:var(--font-body);font-size:14.5px;font-weight:500;color:#AEB8C2;display:flex;align-items:center;gap:5px}
+.nav-drop-btn:hover,.nav-drop.open .nav-drop-btn,.nav-drop:hover .nav-drop-btn{color:var(--white)}
+.nav-drop-btn svg{transition:transform .2s}
+.nav-drop.open .nav-drop-btn svg,.nav-drop:hover .nav-drop-btn svg{transform:rotate(180deg)}
+.nav-drop-panel{position:absolute;top:calc(100% + 14px);left:50%;transform:translateX(-50%) translateY(6px);background:var(--ink-2);border:1px solid var(--ink-line);border-radius:14px;padding:12px;display:none;grid-template-columns:repeat(2,214px);gap:5px 16px;box-shadow:0 22px 50px rgba(0,0,0,.5);z-index:var(--z-drop);opacity:0;transition:opacity .18s ease,transform .18s ease}
+.nav-drop.open .nav-drop-panel,.nav-drop:hover .nav-drop-panel{display:grid;opacity:1;transform:translateX(-50%)}
+.nav-drop-panel::before{content:"";position:absolute;top:-7px;left:50%;transform:translateX(-50%) rotate(45deg);width:12px;height:12px;background:var(--ink-2);border-left:1px solid var(--ink-line);border-top:1px solid var(--ink-line)}
+.nav-drop-panel a{display:flex;justify-content:space-between;align-items:baseline;gap:14px;padding:11px 13px;border-radius:9px;color:var(--white);font-size:14px;font-weight:500;transition:background .15s}
+.nav-drop-panel a:hover{background:var(--ink-3);color:var(--white)}
+.nav-drop-panel a.current{background:var(--ink-3)}
+.nav-drop-panel a small{color:var(--gold);font-size:12.5px;font-weight:600;white-space:nowrap}
+.nav-drop-panel .all{grid-column:1/-1;justify-content:center;color:var(--orange);border-top:1px solid var(--ink-line);border-radius:0;margin-top:4px;padding-top:12px}
+.nav-drop-panel .all:hover{background:none;color:var(--orange-2)}
+.header-phone{display:flex;align-items:center;gap:8px;color:var(--white);text-decoration:none;font-weight:600;font-size:15px;white-space:nowrap}
+.header-phone svg{color:var(--orange)}
+.header-cta{padding:12px 22px;font-size:15px;min-height:46px;white-space:nowrap}
+@media (max-width:900px){nav.main-nav{display:none}}
+@media (max-width:620px){
+  .header-phone span{display:none}
+  .site-header .wrap{gap:12px;padding:0 16px}
+  .logo-name{font-size:20px}
+  .header-cta{padding:11px 16px;font-size:14px}
+}
+
+/* Hero */
+.hero{background:var(--ink);color:var(--white);padding:clamp(48px,6vw,76px) 0 clamp(64px,8vw,88px);position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(128deg,rgba(255,255,255,.022) 0 2px,transparent 2px 52px);pointer-events:none}
+.hero::after{content:"";position:absolute;right:-160px;top:-180px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(255,106,21,.16),transparent 62%);pointer-events:none}
+.hero .wrap{display:grid;grid-template-columns:1.14fr .86fr;gap:52px;align-items:center;position:relative;z-index:1}
+.hero .wrap>*{min-width:0}
+.crumbs{font-size:13px;color:var(--steel-light);margin-bottom:20px}
+.crumbs a{color:var(--steel-light);text-decoration:none;transition:color .15s}
+.crumbs a:hover{color:var(--white)}
+.crumbs .here{color:#D7DDE3}
+.hero h1{font-size:clamp(38px,6.2vw,72px);color:var(--white);margin-bottom:18px;line-height:.96;letter-spacing:-.02em}
+.hero h1 em{font-style:normal;color:var(--orange)}
+.hero .sub{font-size:clamp(16px,2vw,19px);color:#B4BEC8;margin-bottom:30px;max-width:48ch;line-height:1.58}
+.hero-ctas{display:flex;gap:13px;flex-wrap:wrap;margin-bottom:22px}
+.micro-trust{display:flex;align-items:center;gap:9px;font-size:14px;color:#B4BEC8;flex-wrap:wrap}
+.stars{color:var(--gold);letter-spacing:2px;font-size:15px}
+.reg-card{background:linear-gradient(180deg,#1A222D,#141B24);border:1px solid var(--ink-line);border-radius:18px;padding:30px;box-shadow:0 30px 70px rgba(0,0,0,.44);position:relative}
+.reg-card::before{content:"";position:absolute;top:0;left:26px;right:26px;height:2px;background:linear-gradient(90deg,transparent,var(--orange),transparent);border-radius:2px}
+.reg-card h3{color:var(--white);font-size:26px;margin-bottom:6px}
+.reg-card p{font-size:14.5px;color:#B4BEC8;margin-bottom:18px}
+.reg-row{display:flex;gap:11px}
+.reg-input{flex:1;background:var(--plate);border:2px solid #D6B400;border-radius:9px;font-family:var(--font-body);font-weight:700;font-size:23px;letter-spacing:.12em;text-transform:uppercase;text-align:center;color:#141414;padding:11px 12px;min-width:0;box-shadow:inset 0 -3px 0 rgba(0,0,0,.12)}
+.reg-input::placeholder{color:#8a7a00;opacity:.7}
+.reg-input:focus{outline:3px solid var(--orange);outline-offset:2px}
+.reg-result{margin-top:15px;background:var(--ink-3);border:1px solid var(--ink-line);border-radius:11px;padding:15px 17px;font-size:14px;color:#D7DDE3;display:none}
+.reg-result.show{display:block}
+.reg-result strong{color:var(--white)}
+.reg-result .due{color:var(--gold);font-weight:600}
+@media (max-width:860px){
+  .hero .wrap{grid-template-columns:1fr;gap:34px}
+  .hero-ctas .btn{flex:1;min-width:160px}
+}
+@media (max-width:480px){
+  .hero-ctas{flex-direction:column}
+  .hero-ctas .btn{width:100%;flex:none}
+}
+
+/* Facts strip */
+.facts-strip{background:var(--white);border-bottom:1px solid var(--line);padding:24px 0}
+.facts-strip .wrap{display:flex;align-items:center;justify-content:center;gap:14px 44px;flex-wrap:wrap}
+.fact{display:flex;align-items:center;gap:10px;font-size:14px;font-weight:500;color:var(--ink)}
+.fact svg{color:var(--green);flex-shrink:0}
+
+/* Image slot (swap the div for <img src=".." alt=".."> when real photos are ready) */
+.img-slot{position:relative;overflow:hidden;border-radius:16px;background:var(--grad-ink);border:1px solid var(--ink-line);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;text-align:center;color:#8A96A2;box-shadow:var(--sh-md)}
+.img-slot::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(128deg,rgba(255,255,255,.028) 0 2px,transparent 2px 44px)}
+.img-slot .ico{width:56px;height:56px;border-radius:14px;background:rgba(255,106,21,.14);border:1px solid rgba(255,106,21,.3);display:flex;align-items:center;justify-content:center;color:var(--orange);position:relative}
+.img-slot span{position:relative;font-size:13px;font-weight:500;letter-spacing:.02em}
+.img-slot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.img-slot.tall{aspect-ratio:4/5}
+.img-slot.wide{aspect-ratio:21/9;width:100%}
+
+/* Explain (text + image) */
+.explain{background:var(--chalk)}
+.explain .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:52px;align-items:center}
+.explain .copy p{margin-bottom:16px;max-width:60ch;font-size:16.5px}
+.explain .copy strong{color:var(--ink)}
+.explain .copy .mini-list{list-style:none;margin-top:22px;display:grid;gap:11px}
+.explain .copy .mini-list li{display:flex;gap:11px;font-size:15px;color:var(--ink);font-weight:500}
+.explain .copy .mini-list svg{color:var(--green);flex-shrink:0;margin-top:3px}
+@media (max-width:860px){.explain .wrap{grid-template-columns:1fr;gap:36px}.img-slot.tall{aspect-ratio:16/10}}
+
+/* Process */
+.process{background:var(--white)}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-top:40px}
+.step{background:var(--white);border:1px solid var(--line);border-radius:14px;padding:30px 28px;box-shadow:var(--sh-sm)}
+.step .num{font-family:var(--font-head);font-weight:700;font-size:52px;color:var(--orange);line-height:1;margin-bottom:14px}
+.step h3{font-size:23px;margin-bottom:8px}
+.step p{font-size:14.5px}
+
+/* Pricing */
+.pricing{background:var(--ink);color:var(--white);position:relative;overflow:hidden}
+.pricing::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(128deg,rgba(255,255,255,.018) 0 2px,transparent 2px 52px);pointer-events:none}
+.pricing .wrap{position:relative}
+.pricing h2{color:var(--white)}
+.price-table{margin-top:40px;border:1px solid var(--ink-line);border-radius:16px;overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,.32)}
+.price-row{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:22px 26px;background:var(--ink-2);border-bottom:1px solid var(--ink-line);flex-wrap:wrap;transition:background .18s ease}
+.price-row:last-child{border-bottom:0}
+.price-row:hover{background:var(--ink-3)}
+.price-row .job{font-weight:600;color:var(--white);font-size:17px}
+.price-row .job small{display:block;font-weight:400;color:#8A96A2;font-size:13.5px;margin-top:3px}
+.price-row .amount{font-family:var(--font-head);font-weight:700;font-size:34px;color:var(--orange);white-space:nowrap;font-variant-numeric:tabular-nums;letter-spacing:.01em}
+.price-row .amount small{font-family:var(--font-body);font-size:13px;font-weight:500;color:#8A96A2;margin-right:7px;text-transform:uppercase;letter-spacing:.08em}
+.price-row .amount.free{color:var(--green)}
+.honesty{margin-top:20px;font-size:13.5px;color:#96A1AD;display:flex;gap:9px;align-items:flex-start}
+.honesty svg{flex-shrink:0;margin-top:2px;color:var(--green)}
+
+/* What we can read (checks) */
+.checks{background:var(--chalk);position:relative}
+.checks::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(14,18,23,.045) 1px,transparent 1px);background-size:26px 26px;pointer-events:none}
+.checks .wrap{position:relative}
+.checks-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:14px;margin-top:40px}
+.check-item{background:var(--white);border:1px solid var(--line);border-radius:12px;padding:18px 20px;display:flex;align-items:center;gap:12px;font-size:14.5px;font-weight:500;color:var(--ink);box-shadow:var(--sh-sm)}
+.check-item svg{color:var(--green);flex-shrink:0}
+
+/* Feature / comparison boxes (with image) */
+.features{background:var(--white)}
+.feature-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;margin-top:40px}
+.feature-box{border:1px solid var(--line);border-radius:16px;overflow:hidden;background:var(--white);box-shadow:var(--sh-sm);display:flex;flex-direction:column;transition:transform .22s cubic-bezier(.2,.7,.3,1),box-shadow .22s ease}
+.feature-box:hover{transform:translateY(-4px);box-shadow:var(--sh-md)}
+.feature-box .fimg{aspect-ratio:16/10;position:relative;overflow:hidden;background:var(--grad-ink);display:flex;align-items:center;justify-content:center}
+.feature-box .fimg::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.05) 1px,transparent 1px);background-size:22px 22px}
+.feature-box .fimg .ico{width:54px;height:54px;border-radius:13px;background:rgba(255,106,21,.14);border:1px solid rgba(255,106,21,.3);display:flex;align-items:center;justify-content:center;color:var(--orange);position:relative}
+.feature-box .fimg img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.feature-box .fbody{padding:22px 24px}
+.feature-box h3{font-size:22px;margin-bottom:8px;display:flex;align-items:center;gap:9px}
+.feature-box .tag{font-family:var(--font-body);font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--orange);margin-bottom:10px;display:inline-block}
+.feature-box p{font-size:14.5px}
+
+/* Reviews */
+.reviews{background:var(--chalk)}
+.reviews-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:18px;margin-top:40px}
+.review-card{background:var(--white);border:1px solid var(--line);border-radius:14px;padding:26px;box-shadow:var(--sh-sm)}
+.review-card .stars{margin-bottom:12px;color:var(--gold);letter-spacing:2px}
+.review-card p{font-size:15px;color:var(--steel);margin-bottom:18px;line-height:1.6}
+.reviewer{display:flex;align-items:center;gap:11px}
+.avatar{width:40px;height:40px;border-radius:50%;background:var(--grad-ink);color:var(--white);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:600;flex-shrink:0;box-shadow:0 3px 8px rgba(14,18,23,.24)}
+.reviewer .name{font-size:14px;font-weight:600;color:var(--ink)}
+.reviewer .meta{font-size:12.5px;color:var(--steel-light)}
+
+/* Downloads */
+.downloads{background:var(--white)}
+.dl-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;margin-top:40px}
+.dl-card{display:flex;align-items:center;gap:16px;background:var(--chalk);border:1px solid var(--line);border-radius:14px;padding:20px 22px;text-decoration:none;transition:border-color .18s ease,transform .18s ease,box-shadow .18s ease}
+.dl-card:hover{border-color:var(--orange);transform:translateY(-3px);box-shadow:var(--sh-md)}
+.dl-card .dico{width:48px;height:48px;border-radius:11px;background:var(--white);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;color:var(--orange);flex-shrink:0}
+.dl-card .t{flex:1}
+.dl-card .t strong{display:block;font-size:15.5px;color:var(--ink);font-weight:600}
+.dl-card .t small{font-size:12.5px;color:var(--steel-light)}
+.dl-card .arr{color:var(--orange);flex-shrink:0}
+
+/* FAQ */
+.faq{background:var(--chalk)}
+.faq-list{margin-top:40px;max-width:800px}
+.faq-list details{background:var(--white);border:1px solid var(--line);border-radius:12px;margin-bottom:12px;overflow:hidden;box-shadow:var(--sh-sm);transition:border-color .2s ease}
+.faq-list details[open]{border-color:#D4D7D0}
+.faq-list summary{cursor:pointer;padding:20px 24px;font-weight:600;font-size:16px;color:var(--ink);list-style:none;display:flex;justify-content:space-between;align-items:center;gap:14px}
+.faq-list summary::-webkit-details-marker{display:none}
+.faq-list summary::after{content:"+";font-family:var(--font-head);font-size:28px;color:var(--orange);line-height:1;flex-shrink:0}
+.faq-list details[open] summary::after{content:"–"}
+.faq-list details p{padding:0 24px 20px;font-size:14.5px;line-height:1.6}
+
+/* Related services (cross-links) */
+.related{background:var(--white)}
+.related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px;margin-top:40px}
+.related-card{background:var(--white);border:1px solid var(--line);border-radius:14px;padding:26px;text-decoration:none;box-shadow:var(--sh-sm);position:relative;overflow:hidden;display:flex;flex-direction:column;transition:transform .22s cubic-bezier(.2,.7,.3,1),box-shadow .22s ease,border-color .22s ease}
+.related-card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:var(--grad-orange);transform:scaleX(0);transform-origin:left;transition:transform .3s cubic-bezier(.2,.7,.3,1)}
+.related-card:hover{border-color:transparent;transform:translateY(-4px);box-shadow:var(--sh-md)}
+.related-card:hover::before{transform:scaleX(1)}
+.related-card .icon{width:46px;height:46px;border-radius:11px;background:var(--chalk);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;margin-bottom:16px;transition:background .22s ease,border-color .22s ease}
+.related-card .icon svg{width:24px;height:24px;stroke:var(--ink);transition:stroke .22s ease}
+.related-card:hover .icon{background:var(--ink);border-color:var(--ink)}
+.related-card:hover .icon svg{stroke:var(--white)}
+.related-card h3{font-size:22px;margin-bottom:6px}
+.related-card .price{color:var(--orange);font-family:var(--font-head);font-weight:700;font-size:19px;margin-bottom:8px}
+.related-card>p{font-size:14px;color:var(--steel)}
+.related-card .go{margin-top:auto;padding-top:16px;font-size:13.5px;font-weight:600;color:var(--orange);display:inline-flex;align-items:center;gap:6px;text-transform:uppercase;letter-spacing:.06em;align-self:flex-start}
+
+/* Final CTA */
+.final-cta{background:var(--grad-orange);position:relative;overflow:hidden;text-align:center}
+.final-cta::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(128deg,rgba(14,18,23,.06) 0 20px,transparent 20px 40px);pointer-events:none}
+.final-cta .wrap{position:relative}
+.final-cta h2{color:#1A0E04;font-size:clamp(34px,5.4vw,52px)}
+.final-cta p{color:#7A3906;font-weight:500;margin-bottom:30px;font-size:17px}
+.final-cta .btn-dark{font-size:17px;padding:17px 38px}
+.final-cta .or-call{margin-top:18px;font-size:15px;color:#1A0E04}
+.final-cta .or-call a{font-weight:700;text-decoration:underline;text-underline-offset:3px}
+
+/* Footer */
+footer{background:var(--ink);color:#8A96A2;padding:clamp(56px,7vw,80px) 0 110px;font-size:14px;position:relative}
+footer::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:var(--grad-orange)}
+.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:40px}
+.footer-grid h4{font-family:var(--font-head);text-transform:uppercase;color:var(--white);font-size:18px;letter-spacing:.03em;margin-bottom:16px;font-weight:700}
+.footer-grid ul{list-style:none}
+.footer-grid li{margin-bottom:10px}
+.footer-grid a{color:#8A96A2;text-decoration:none;transition:color .18s ease}
+.footer-grid a:hover{color:var(--orange)}
+.footer-brand p{margin-top:14px;max-width:34ch;line-height:1.6}
+.footer-bottom{border-top:1px solid var(--ink-line);margin-top:48px;padding-top:24px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:13px}
+@media (max-width:820px){.footer-grid{grid-template-columns:1fr 1fr}}
+@media (max-width:480px){.footer-grid{grid-template-columns:1fr}}
+
+/* Sticky mobile bar */
+.mobile-bar{position:fixed;bottom:0;left:0;right:0;z-index:var(--z-bar);display:none;background:rgba(14,18,23,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-top:1px solid var(--ink-line);padding:11px 12px calc(11px + env(safe-area-inset-bottom));gap:10px}
+.mobile-bar .btn{flex:1;min-height:52px;font-size:16px}
+@media (max-width:760px){.mobile-bar{display:flex}footer{padding-bottom:150px}}
+
+/* Booking modal */
+.modal-overlay{position:fixed;inset:0;z-index:var(--z-modal);background:rgba(8,11,15,.74);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);display:none;align-items:flex-start;justify-content:center;padding:26px 16px;overflow-y:auto}
+.modal-overlay.open{display:flex}
+.modal{background:var(--white);border-radius:18px;max-width:520px;width:100%;padding:34px;margin:auto 0;position:relative;box-shadow:var(--sh-lg);animation:modalIn .3s cubic-bezier(.2,.7,.3,1)}
+@keyframes modalIn{from{opacity:0;transform:translateY(16px) scale(.98)}to{opacity:1;transform:none}}
+.modal h3{font-size:32px;margin-bottom:6px}
+.modal .modal-sub{font-size:14.5px;margin-bottom:24px}
+.modal-close{position:absolute;top:18px;right:18px;background:var(--chalk);border:1px solid var(--line);width:40px;height:40px;border-radius:50%;cursor:pointer;font-size:19px;color:var(--steel);display:flex;align-items:center;justify-content:center;transition:background .15s,color .15s}
+.modal-close:hover{background:var(--ink);color:var(--white);border-color:var(--ink)}
+.field{margin-bottom:17px}
+.field label{display:block;font-size:13px;font-weight:600;color:var(--ink);margin-bottom:7px;text-transform:uppercase;letter-spacing:.05em}
+.field input,.field select,.field textarea{width:100%;font-family:var(--font-body);font-size:15.5px;padding:13px 15px;border:1.5px solid var(--line);border-radius:9px;background:var(--white);color:var(--ink);min-height:50px;transition:border-color .15s,box-shadow .15s}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--orange);box-shadow:0 0 0 3px rgba(255,106,21,.2)}
+.field-row{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+.field input.reg-input{width:100%;min-height:50px;background:var(--plate);border:2px solid #D6B400;font-weight:700;font-size:23px;letter-spacing:.12em;text-transform:uppercase;text-align:center}
+.modal .btn-primary{width:100%;font-size:16.5px;margin-top:4px}
+.form-note{font-size:12.5px;color:var(--steel-light);text-align:center;margin-top:14px}
+.confirm{text-align:center;padding:16px 0;display:none}
+.confirm.show{display:block}
+.confirm .tick{width:66px;height:66px;border-radius:50%;background:#E1F5EE;color:var(--green);display:flex;align-items:center;justify-content:center;margin:0 auto 20px}
+.confirm h3{margin-bottom:8px}
+.confirm p{font-size:15px;margin-bottom:8px}
+.confirm .summary{background:var(--chalk);border-radius:11px;padding:15px 19px;font-size:14px;text-align:left;margin:20px 0;color:var(--ink)}
+@media (max-width:520px){.field-row{grid-template-columns:1fr}.modal{padding:28px 22px}}
+
+/* Reviews-specific */
+.hero .wrap{display:block}
+.hero .rating-inline{display:inline-flex;align-items:center;gap:12px;background:rgba(255,255,255,.06);border:1px solid var(--ink-line);border-radius:50px;padding:8px 18px;margin-bottom:8px}
+.hero .rating-inline .stars{color:var(--gold);font-size:16px;letter-spacing:2px}
+.hero .rating-inline b{color:#fff;font-size:15px}
+.hero .rating-inline span{color:#B4BEC8;font-size:14px}
+.rating-summary{background:var(--white)}
+.rating-summary .wrap{display:grid;grid-template-columns:.85fr 1.15fr;gap:56px;align-items:center}
+@media (max-width:760px){.rating-summary .wrap{grid-template-columns:1fr;gap:38px}}
+.rating-score{display:flex;align-items:flex-end;gap:14px}
+.rating-score .big{font-family:var(--font-head);font-weight:700;font-size:clamp(76px,13vw,128px);color:var(--ink);line-height:.82;letter-spacing:-.02em}
+.rating-score .out{font-family:var(--font-head);font-weight:700;font-size:26px;color:var(--steel-light);padding-bottom:14px}
+.rating-meta .stars{color:var(--gold);font-size:24px;letter-spacing:4px;display:block;margin:14px 0 8px}
+.rating-meta p{font-size:16px;color:var(--steel);margin-bottom:20px}
+.rating-meta .google-pill{display:inline-flex;align-items:center;gap:10px;border:1px solid var(--line);border-radius:50px;padding:10px 18px;font-weight:600;color:var(--ink);font-size:14.5px;text-decoration:none;transition:border-color .18s ease,transform .18s ease}
+.rating-meta .google-pill:hover{border-color:var(--orange);transform:translateY(-2px)}
+.rating-bars{display:flex;flex-direction:column;gap:13px}
+.bar-row{display:flex;align-items:center;gap:16px;font-size:14px}
+.bar-row .lbl{width:52px;color:var(--steel);white-space:nowrap;font-weight:500}
+.bar-row .lbl svg{display:inline;vertical-align:-2px;color:var(--gold)}
+.bar-track{flex:1;height:11px;border-radius:50px;background:var(--chalk);overflow:hidden;border:1px solid var(--line)}
+.bar-fill{height:100%;background:var(--grad-orange);border-radius:50px;width:0;transition:width 1.1s cubic-bezier(.2,.7,.3,1)}
+.bar-row .pct{width:46px;text-align:right;color:var(--steel-light);font-variant-numeric:tabular-nums}
+.reviews-page{background:var(--chalk)}
+.review-card .svc{display:inline-block;font-size:11.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--orange);background:rgba(255,106,21,.1);border-radius:50px;padding:4px 11px;margin-bottom:14px}
+.gverify{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--steel-light);margin-top:2px}
+.gverify svg{color:var(--green)}
+.reviews-note{text-align:center;margin-top:44px;font-size:14px;color:var(--steel-light)}
+.blog-page .rating-summary{display:none}
+.blog-page .rating-inline{display:none}
+.blog-page .reviews-page{background:var(--chalk)}
+.blog-page .review-card{display:flex;flex-direction:column;min-height:250px}
+.blog-page .review-card h3{font-size:25px;margin:14px 0 12px}
+.blog-page .review-card p{font-size:15px;flex:1}
+.blog-page .review-card .reviewer{display:none}
+.blog-page .review-card .read-more{display:inline-flex;margin-top:18px;color:var(--orange);font-weight:700;text-decoration:none}
+.blog-page .review-card:nth-child(n+7){display:none}
+</style>
+</head>
+<body class="blog-page">
+
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="index.html" aria-label="Northgate Garage home">
+      <span class="logo-mark" aria-hidden="true">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0E1217" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4.5 4.5 0 0 0-6 6L3 18l3 3 5.7-5.7a4.5 4.5 0 0 0 6-6L14 13l-3-3 3.7-3.7z"/></svg>
+      </span>
+      <span class="logo-name">Northgate<span>&nbsp;Garage</span></span>
+    </a>
+    <nav class="main-nav" aria-label="Main">
+      <div class="nav-drop">
+        <button class="nav-drop-btn" aria-expanded="false" aria-haspopup="true">
+          Services
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="nav-drop-panel">
+          <a href="mot-watford.html"><span>MOT test</span><small>from £45</small></a>
+          <a href="car-service-watford.html"><span>Full service</span><small>from £189</small></a>
+          <a href="car-service-watford.html"><span>Interim service</span><small>from £119</small></a>
+          <a href="brakes.html"><span>Brakes</span><small>from £120</small></a>
+          <a href="diagnostics.html"><span>Diagnostics</span><small>from £49</small></a>
+          <a href="air-conditioning.html"><span>Air con regas</span><small>from £59</small></a>
+          <a href="clutch.html"><span>Clutch</span><small>from £450</small></a>
+          <a href="ev-servicing.html"><span>EV &amp; hybrid</span><small>from £99</small></a>
+          <a class="all" href="index.html#services">View all services →</a>
+        </div>
+      </div>
+      <a href="pricing.html">Pricing</a>
+      <a class="current" href="reviews.html">Reviews</a>
+      <a href="contact.html">Find us</a>
+      <a href="about.html">About</a>
+    </nav>
+    <a class="header-phone" href="tel:+441632960123" data-track="call">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      <span>01632 960123</span>
+    </a>
+    <button class="btn btn-primary header-cta" data-open-booking>Book now</button>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="hero">
+  <div class="wrap">
+    <p class="crumbs"><a href="index.html">Home</a> / <span class="here">Blog</span></p>
+    <span class="rating-inline"><span class="stars" aria-hidden="true">★★★★★</span> <b>4.9</b> <span>· 312 Google reviews</span></span>
+    <h1>Car care, <em>without the jargon</em></h1>
+    <p class="sub">Straightforward guides from our Watford workshop to help you understand warning signs, plan maintenance and avoid expensive surprises.</p>
+    <div class="hero-ctas">
+      <a class="btn btn-primary" href="#articles">Read the latest guides</a>
+      <a class="btn btn-ghost" href="contact.html">Ask the garage</a>
+    </div>
+  </div>
+</section>
+
+<section class="rating-summary">
+  <div class="wrap">
+    <div>
+      <span class="kicker">The score</span>
+      <div class="rating-score"><span class="big">4.9</span><span class="out">/ 5</span></div>
+      <div class="rating-meta">
+        <span class="stars" aria-hidden="true">★★★★★</span>
+        <p>Rated 4.9 out of 5 across <strong>312 Google reviews</strong>, and a member of the Good Garage Scheme where every review is independently verified.</p>
+        <a class="google-pill" href="https://maps.google.com/?q=Northgate+Garage+Watford" target="_blank" rel="noopener">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v8M8 12h8"/></svg>
+          Read all 312 on Google
+        </a>
+      </div>
+    </div>
+    <div class="rating-bars">
+      <div class="bar-row"><span class="lbl">5 <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .6l3.1 6.3 6.9 1-5 4.9 1.2 6.9L12 16.5l-6.2 3.2L7 12.8 2 7.9l6.9-1z"/></svg></span><span class="bar-track"><span class="bar-fill" data-pct="89"></span></span><span class="pct">89%</span></div>
+      <div class="bar-row"><span class="lbl">4 <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .6l3.1 6.3 6.9 1-5 4.9 1.2 6.9L12 16.5l-6.2 3.2L7 12.8 2 7.9l6.9-1z"/></svg></span><span class="bar-track"><span class="bar-fill" data-pct="8"></span></span><span class="pct">8%</span></div>
+      <div class="bar-row"><span class="lbl">3 <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .6l3.1 6.3 6.9 1-5 4.9 1.2 6.9L12 16.5l-6.2 3.2L7 12.8 2 7.9l6.9-1z"/></svg></span><span class="bar-track"><span class="bar-fill" data-pct="2"></span></span><span class="pct">2%</span></div>
+      <div class="bar-row"><span class="lbl">2 <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .6l3.1 6.3 6.9 1-5 4.9 1.2 6.9L12 16.5l-6.2 3.2L7 12.8 2 7.9l6.9-1z"/></svg></span><span class="bar-track"><span class="bar-fill" data-pct="1"></span></span><span class="pct">1%</span></div>
+      <div class="bar-row"><span class="lbl">1 <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .6l3.1 6.3 6.9 1-5 4.9 1.2 6.9L12 16.5l-6.2 3.2L7 12.8 2 7.9l6.9-1z"/></svg></span><span class="bar-track"><span class="bar-fill" data-pct="0"></span></span><span class="pct">0%</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="reviews-page" id="articles">
+  <div class="wrap">
+    <span class="kicker">Latest advice</span>
+    <h2>Useful guides for drivers</h2>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <span class="svc">MOT guide</span>
+        <h3>What does an MOT check?</h3>
+        <p>A plain-English walkthrough of the test, how long it takes and the simple faults you can spot before test day.</p>
+        <a class="read-more" href="mot-watford.html">Read the MOT guide →</a>
+        <div class="reviewer">
+          <span class="avatar">SM</span>
+          <span><span class="name">Sarah M.</span><br><span class="gverify"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Google review · 2 weeks ago</span></span>
+        </div>
+      </div>
+      <div class="review-card">
+        <span class="svc">Maintenance</span>
+        <h3>Full or interim service?</h3>
+        <p>Understand the difference, when each service is due and which option makes sense for your mileage and driving.</p>
+        <a class="read-more" href="car-service-watford.html">Compare service options →</a>
+        <div class="reviewer">
+          <span class="avatar">DP</span>
+          <span><span class="name">Dan P.</span><br><span class="gverify"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Google review · 1 month ago</span></span>
+        </div>
+      </div>
+      <div class="review-card">
+        <span class="svc">Warning lights</span>
+        <h3>Can I drive with the engine light on?</h3>
+        <p>What a steady or flashing engine light means, when to stop and what happens during a proper diagnostic check.</p>
+        <a class="read-more" href="diagnostics.html">Understand warning lights →</a>
+        <div class="reviewer">
+          <span class="avatar">RT</span>
+          <span><span class="name">Ryan T.</span><br><span class="gverify"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Google review · 3 weeks ago</span></span>
+        </div>
+      </div>
+      <div class="review-card">
+        <span class="svc">Brakes</span>
+        <h3>Seven signs your brakes need attention</h3>
+        <p>Squealing, grinding, vibration and pedal changes explained, including which symptoms should never be ignored.</p>
+        <a class="read-more" href="brakes.html">Read the brake guide →</a>
+        <div class="reviewer">
+          <span class="avatar">JC</span>
+          <span><span class="name">James C.</span><br><span class="gverify"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Google review · 2 weeks ago</span></span>
+        </div>
+      </div>
+      <div class="review-card">
+        <span class="svc">Air conditioning</span>
+        <h3>When does car air con need a regas?</h3>
+        <p>Why cooling performance fades, how often to service the system and the difference between R134a and R1234yf.</p>
+        <a class="read-more" href="air-conditioning.html">Read the air-con guide →</a>
+        <div class="reviewer">
+          <span class="avatar">NP</span>
+          <span><span class="name">Nadia P.</span><br><span class="gverify"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Google review · 3 weeks ago</span></span>
+        </div>
+      </div>
+      <div class="review-card">
+        <span class="svc">EV &amp; hybrid</span>
+        <h3>Do electric cars need servicing?</h3>
+        <p>EVs have fewer moving parts, but brakes, tyres, cooling systems and high-voltage components still require scheduled checks.</p>
+        <a class="read-more" href="ev-servicing.html">Read the EV guide →</a>
+        <div class="reviewer">
+          <span class="avatar">AK</span>
+          <span><span class="name">Amina K.</span><br><span class="gverify"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Google review · 1 month ago</span></span>
+        </div>
+      </div>
+      <div class="review-card">
+        <span class="svc">EV service</span>
+        <div class="stars" aria-hidden="true">★★★★★</div>
+        <p>"Independent garage that actually knows EVs. Battery health check, plain-English report, half what the dealer wanted. Booked the whole family's cars in now."</p>
+        <div class="reviewer">
+          <span class="avatar">LO</span>
+          <span><span class="name">Leon O.</span><br><span class="gverify"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Google review · 2 months ago</span></span>
+        </div>
+      </div>
+      <div class="review-card">
+        <span class="svc">Clutch</span>
+        <div class="stars" aria-hidden="true">★★★★★</div>
+        <p>"Big clutch job, fixed price up front, no nasty surprises at the end. Courtesy car sorted so I never missed work. Twelve-month warranty on the parts too."</p>
+        <div class="reviewer">
+          <span class="avatar">MB</span>
+          <span><span class="name">Marcus B.</span><br><span class="gverify"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Google review · 2 months ago</span></span>
+        </div>
+      </div>
+      <div class="review-card">
+        <span class="svc">MOT + service</span>
+        <div class="stars" aria-hidden="true">★★★★★</div>
+        <p>"Booked service and MOT together, done in a morning, courtesy car sorted. Everything explained in plain English. My whole family uses them now."</p>
+        <div class="reviewer">
+          <span class="avatar">RG</span>
+          <span><span class="name">Rob G.</span><br><span class="gverify"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Google review · 1 month ago</span></span>
+        </div>
+      </div>
+    </div>
+    <p class="reviews-note">More practical guides are coming from the Northgate workshop.</p>
+  </div>
+</section>
+
+<section class="final-cta" id="book">
+  <div class="wrap">
+    <h2>Need advice about your car?</h2>
+    <p>Talk to the workshop or book a check online in about 30 seconds.</p>
+    <button class="btn btn-dark" data-open-booking>Book a check</button>
+    <p class="or-call">or call <a href="tel:+441632960123" data-track="call">01632 960123</a> — we answer fast</p>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="logo" href="index.html" aria-label="Northgate Garage home">
+          <span class="logo-mark" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0E1217" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4.5 4.5 0 0 0-6 6L3 18l3 3 5.7-5.7a4.5 4.5 0 0 0 6-6L14 13l-3-3 3.7-3.7z"/></svg>
+          </span>
+          <span class="logo-name">Northgate<span>&nbsp;Garage</span></span>
+        </a>
+        <p>Independent MOT centre and garage serving Watford since 2011. DVSA approved, IMI certified, honest by default.</p>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul>
+          <li><a href="mot-watford.html">MOT testing</a></li>
+          <li><a href="car-service-watford.html">Car servicing</a></li>
+          <li><a href="diagnostics.html">Diagnostics</a></li>
+          <li><a href="brakes.html">Brakes &amp; clutch</a></li>
+          <li><a href="index.html#services">EV &amp; hybrid</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About us</a></li>
+          <li><a href="blog.html">Blog &amp; guides</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="reviews.html">Reviews</a></li>
+          <li><a href="contact.html">Find us</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Visit</h4>
+        <ul>
+          <li>12 Northgate Works, Watford</li>
+          <li>WD17 1AB</li>
+          <li><a href="tel:+441632960123" data-track="call">01632 960123</a></li>
+          <li>Mon–Fri 8:00–17:30 · Sat 8:30–13:00</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Northgate Garage Ltd. All rights reserved.</span>
+      <span><a href="privacy.html" style="color:inherit">Privacy</a> &nbsp;·&nbsp; <a href="terms.html" style="color:inherit">Terms</a></span>
+    </div>
+  </div>
+</footer>
+
+<div class="mobile-bar">
+  <a class="btn btn-ghost" href="tel:+441632960123" data-track="call">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    Call
+  </a>
+  <button class="btn btn-primary" data-open-booking>Book now</button>
+</div>
+
+<div class="modal-overlay" id="bookingModal" role="dialog" aria-modal="true" aria-labelledby="bookingTitle">
+  <div class="modal">
+    <button class="modal-close" data-close-booking aria-label="Close booking form">✕</button>
+    <div id="bookingFormWrap">
+      <h3 id="bookingTitle">Book your car in</h3>
+      <p class="modal-sub">Takes about 30 seconds. We'll confirm by text, usually within the hour.</p>
+      <form id="bookingForm" novalidate>
+        <div class="field">
+          <label for="bkReg">Vehicle registration</label>
+          <input class="reg-input" id="bkReg" type="text" maxlength="8" autocomplete="off" placeholder="AB12 CDE" required>
+        </div>
+        <div class="field">
+          <label for="bkService">Service</label>
+          <select id="bkService" required>
+            <option value="MOT test">MOT test — from £45</option>
+            <option value="Interim service">Interim service — from £119</option>
+            <option value="Full service">Full service — from £189</option>
+            <option value="Diagnostics">Diagnostics — from £49</option>
+            <option value="Brakes">Brakes — from £120 per axle</option>
+            <option value="EV / hybrid service">EV / hybrid service — from £99</option>
+            <option value="Something else">Something else</option>
+          </select>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="bkName">Your name</label>
+            <input id="bkName" type="text" autocomplete="name" required>
+          </div>
+          <div class="field">
+            <label for="bkPhone">Mobile number</label>
+            <input id="bkPhone" type="tel" autocomplete="tel" required>
+          </div>
+        </div>
+        <div class="field">
+          <label for="bkDate">Preferred date</label>
+          <input id="bkDate" type="date" required>
+        </div>
+        <button class="btn btn-primary" type="submit">Confirm booking request</button>
+        <p class="form-note">No payment now. No account needed. We only use your number to confirm the booking.</p>
+      </form>
+    </div>
+    <div class="confirm" id="bookingConfirm">
+      <div class="tick">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+      </div>
+      <h3>Request received</h3>
+      <p>Thanks — we'll text you to confirm your slot, usually within the hour (or first thing tomorrow if it's out of hours).</p>
+      <div class="summary" id="confirmSummary"></div>
+      <p style="font-size:13.5px;color:var(--steel-light)">Need it sooner? Call <a href="tel:+441632960123" style="color:var(--orange);font-weight:600" data-track="call">01632 960123</a></p>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  var modal=document.getElementById('bookingModal');
+  var formWrap=document.getElementById('bookingFormWrap');
+  var confirmBox=document.getElementById('bookingConfirm');
+  var bookingForm=document.getElementById('bookingForm');
+  var serviceSelect=document.getElementById('bkService');
+  var bkReg=document.getElementById('bkReg');
+  var bkDate=document.getElementById('bkDate');
+
+  function track(name,params){ window.dataLayer=window.dataLayer||[]; window.dataLayer.push(Object.assign({event:name},params||{})); }
+
+  function openModal(service){
+    if(service) serviceSelect.value=service;
+    formWrap.style.display='block';
+    confirmBox.classList.remove('show');
+    modal.classList.add('open');
+    document.body.style.overflow='hidden';
+    track('booking_open',{service:serviceSelect.value,page:'reviews'});
+  }
+  function closeModal(){ modal.classList.remove('open'); document.body.style.overflow=''; }
+
+  document.querySelectorAll('[data-open-booking]').forEach(function(el){ el.addEventListener('click',function(e){ e.preventDefault(); openModal(el.getAttribute('data-service')); }); });
+  document.querySelectorAll('[data-close-booking]').forEach(function(el){ el.addEventListener('click',closeModal); });
+  modal.addEventListener('click',function(e){ if(e.target===modal) closeModal(); });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape') closeModal(); });
+
+  var drop=document.querySelector('.nav-drop');
+  if(drop){
+    var dropBtn=drop.querySelector('.nav-drop-btn');
+    dropBtn.addEventListener('click',function(e){ e.stopPropagation(); var open=drop.classList.toggle('open'); dropBtn.setAttribute('aria-expanded',open); });
+    document.addEventListener('click',function(e){ if(!drop.contains(e.target)){ drop.classList.remove('open'); dropBtn.setAttribute('aria-expanded','false'); } });
+    document.addEventListener('keydown',function(e){ if(e.key==='Escape'){ drop.classList.remove('open'); dropBtn.setAttribute('aria-expanded','false'); } });
+    drop.querySelectorAll('.nav-drop-panel a').forEach(function(a){ a.addEventListener('click',function(){ drop.classList.remove('open'); dropBtn.setAttribute('aria-expanded','false'); }); });
+  }
+
+  var today=new Date(); today.setDate(today.getDate()+1);
+  bkDate.min=today.toISOString().split('T')[0];
+
+  bookingForm.addEventListener('submit',function(e){
+    e.preventDefault();
+    if(!bookingForm.checkValidity()){ bookingForm.reportValidity(); return; }
+    var reg=bkReg.value.trim().toUpperCase();
+    var service=serviceSelect.value;
+    var name=document.getElementById('bkName').value.trim();
+    var date=new Date(bkDate.value).toLocaleDateString('en-GB',{weekday:'long',day:'numeric',month:'long'});
+    document.getElementById('confirmSummary').innerHTML='<strong>'+service+'</strong> for <strong>'+reg+'</strong><br>Preferred date: '+date+'<br>Booked for: '+name;
+    formWrap.style.display='none';
+    confirmBox.classList.add('show');
+    track('booking_submit',{service:service,page:'reviews'});
+  });
+
+  document.querySelectorAll('[data-track="call"]').forEach(function(el){ el.addEventListener('click',function(){ track('click_to_call',{}); }); });
+
+  var hdr=document.querySelector('.site-header');
+  window.addEventListener('scroll',function(){ hdr.classList.toggle('scrolled',window.scrollY>10); },{passive:true});
+
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(!reduce && 'IntersectionObserver' in window){
+    var rvEls=document.querySelectorAll('.review-card');
+    rvEls.forEach(function(el){ var i=Array.prototype.indexOf.call(el.parentNode.children,el); el.style.transitionDelay=(Math.min(i,8)*60)+'ms'; el.classList.add('rv'); });
+    var io=new IntersectionObserver(function(entries){ entries.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } }); },{threshold:.1,rootMargin:'0px 0px -30px 0px'});
+    rvEls.forEach(function(el){ io.observe(el); });
+
+    var bars=document.querySelector('.rating-bars');
+    if(bars){
+      var bio=new IntersectionObserver(function(entries){ entries.forEach(function(en){
+        if(!en.isIntersecting) return; bio.unobserve(en.target);
+        en.target.querySelectorAll('.bar-fill').forEach(function(f){ f.style.width=(f.getAttribute('data-pct')||0)+'%'; });
+      }); },{threshold:.4});
+      bio.observe(bars);
+    }
+  }
+})();
+</script>
+</body>
+</html>
+
+
+
+
+
+

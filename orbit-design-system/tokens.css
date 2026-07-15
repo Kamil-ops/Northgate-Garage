@@ -1,0 +1,197 @@
+/* ============================================
+   Orbit — Security CRM UI Kit
+   Design tokens extracted from Figma
+   File: Orbit - Security CRM Website UI Kit
+   ============================================ */
+
+:root {
+  /* ---------- Colour: Neutral ---------- */
+  --neutral-50:  #F8FAFC;
+  --neutral-100: #F1F5F9;
+  --neutral-200: #E2E8F0;
+  --neutral-300: #CBD5E1;
+  --neutral-400: #94A3B8;
+  --neutral-500: #64748B;
+  --neutral-600: #475569;
+  --neutral-700: #334155;
+  --neutral-800: #1E293B;
+  --neutral-950: #020617;
+
+  /* ---------- Colour: Primary (Indigo) ---------- */
+  --primary-100: #E0E7FF; /* badge gradient start */
+  --primary-200: #C7D2FE; /* badge gradient end */
+  --primary-500: #6366F1;
+  --primary-800: #3730A3;
+  --primary-950: #1E1B4B;
+
+  /* ---------- Colour: Success ---------- */
+  --success-50:  #E7F8F2;
+  --success-100: #B5E9D8;
+  --success-200: #91DFC5;
+  --success-500: #10B981;
+
+  /* ---------- Colour: Base ---------- */
+  --white: #FFFFFF;
+  --alpha-white-20: rgba(255, 255, 255, 0.20);
+  --alpha-white-2:  rgba(255, 255, 255, 0.02);
+
+  /* ---------- Semantic aliases ---------- */
+  --color-bg:            var(--white);
+  --color-bg-subtle:     var(--neutral-50);
+  --color-border:        var(--neutral-100);
+  --color-border-strong: var(--neutral-200);
+  --color-text:          var(--neutral-950);
+  --color-text-body:     var(--neutral-700);
+  --color-text-muted:    var(--neutral-500);
+  --color-accent:        var(--primary-500);
+  --color-accent-strong: var(--primary-800);
+  --color-brand-dark:    var(--primary-950);
+
+  /* ---------- Typography ---------- */
+  /* Labels / headings: Geist Medium (500)
+     Paragraphs: Inter Regular (400) */
+  --font-label: "Geist", system-ui, sans-serif;
+  --font-body:  "Inter", system-ui, sans-serif;
+
+  /* Label scale (Geist Medium) — size / line-height / letter-spacing */
+  --label-12: 500 12px/1.5  var(--font-label);   --ls-12: -0.24px;
+  --label-14: 500 14px/1.55 var(--font-label);   --ls-14: -0.28px;
+  --label-16: 500 16px/1.5  var(--font-label);   --ls-16: -0.32px;
+  --label-20: 500 20px/1.5  var(--font-label);   --ls-20: -0.40px;
+  --label-24: 500 24px/1.35 var(--font-label);   --ls-24: -0.96px;
+  --label-48: 500 48px/1.25 var(--font-label);   --ls-48: -2.88px;
+  --label-72: 500 72px/1    var(--font-label);   --ls-72: -4.32px;
+
+  /* Paragraph scale (Inter Regular) */
+  --para-14: 400 14px/1.55 var(--font-body);
+  --para-16: 400 16px/1.5  var(--font-body);
+  --para-18: 400 18px/1.55 var(--font-body);
+  --ls-para: -0.02em;
+
+  /* ---------- Spacing (4px base) ---------- */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --space-25: 100px; /* page gutter, desktop */
+
+  /* ---------- Radii ---------- */
+  --radius-sm:   6px;   /* logo mark */
+  --radius-md:   8px;   /* buttons, cards */
+  --radius-lg:   14px;  /* icon tiles */
+  --radius-full: 999px; /* pills, badges */
+
+  /* ---------- Shadows ---------- */
+  --shadow-sm: 0px 2px 2px 0px rgba(17, 17, 17, 0.12); /* icon tiles */
+  --shadow-md: 0px 4px 4px 0px rgba(17, 17, 17, 0.12); /* buttons */
+
+  /* ---------- Gradients ---------- */
+  --gradient-badge: linear-gradient(90deg, var(--primary-100), var(--primary-200));
+  --gradient-card-glow: radial-gradient(ellipse at top,
+      rgba(255, 255, 255, 1) 55%,
+      rgba(238, 242, 255, 1) 65%,
+      rgba(224, 231, 255, 1) 70%);
+}
+
+/* ============================================
+   Component classes
+   ============================================ */
+
+/* ----- Buttons (height 32, radius 8) ----- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  height: 32px;
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  font: var(--label-12);
+  letter-spacing: var(--ls-12);
+  cursor: pointer;
+  text-decoration: none;
+  transition: filter 120ms ease;
+}
+.btn:hover { filter: brightness(1.05); }
+
+.btn-primary {
+  background: var(--primary-500);
+  border: 1px solid var(--primary-800);
+  color: var(--neutral-50);
+}
+.btn-secondary {
+  background: var(--neutral-50);
+  border: 1px solid var(--neutral-100);
+  color: var(--neutral-950);
+}
+
+/* ----- Badge / pill ----- */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 32px;
+  padding: var(--space-2) var(--space-3);
+  border: 2px solid var(--neutral-100);
+  border-radius: var(--radius-full);
+  background: var(--gradient-badge);
+  color: var(--primary-500);
+  font: var(--label-14);
+  letter-spacing: var(--ls-14);
+  white-space: nowrap;
+}
+
+/* ----- Cards (radius 8, padding 24/20) ----- */
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: var(--space-5) var(--space-6);
+  border: 1px solid var(--neutral-100);
+  border-radius: var(--radius-md);
+  background: var(--white);
+}
+.card-highlight {
+  border-color: var(--primary-500);
+  background: var(--gradient-card-glow);
+}
+.card-title {
+  font: var(--label-24);
+  letter-spacing: var(--ls-24);
+  color: var(--neutral-950);
+  margin: 0 0 var(--space-3);
+}
+.card-body {
+  font: var(--para-16);
+  letter-spacing: var(--ls-para);
+  color: var(--neutral-500);
+  margin: 0;
+}
+
+/* ----- Icon tile (68px, radius 14) ----- */
+.icon-tile {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 68px;
+  height: 68px;
+  background: var(--white);
+  border: 1.5px solid var(--neutral-100);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+/* ----- Typography helpers ----- */
+.h-display { font: var(--label-72); letter-spacing: var(--ls-72); color: var(--color-text); margin: 0; }
+.h-section { font: var(--label-48); letter-spacing: var(--ls-48); color: var(--color-text); margin: 0; }
+.h-card    { font: var(--label-24); letter-spacing: var(--ls-24); color: var(--color-text); margin: 0; }
+.p-lead    { font: var(--para-18); letter-spacing: var(--ls-para); color: var(--color-text-body); margin: 0; }
+.p-body    { font: var(--para-16); letter-spacing: var(--ls-para); color: var(--color-text-body); margin: 0; }
+.p-small   { font: var(--para-14); letter-spacing: var(--ls-para); color: var(--color-text-muted); margin: 0; }
