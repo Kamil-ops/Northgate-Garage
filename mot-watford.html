@@ -126,12 +126,32 @@ nav.main-nav a:hover::after{width:100%}
 .header-phone{display:flex;align-items:center;gap:8px;color:var(--white);text-decoration:none;font-weight:600;font-size:15px;white-space:nowrap}
 .header-phone svg{color:var(--orange)}
 .header-cta{padding:12px 22px;font-size:15px;min-height:46px;white-space:nowrap}
-@media (max-width:900px){nav.main-nav{display:none}}
+.mobile-menu-toggle{display:none;width:44px;height:44px;padding:0;border:1px solid var(--ink-line);border-radius:9px;background:var(--ink-2);align-items:center;justify-content:center;flex-direction:column;gap:5px;cursor:pointer;flex-shrink:0}
+.mobile-menu-toggle span{display:block;width:20px;height:2px;border-radius:2px;background:var(--white);transition:transform .2s ease,opacity .2s ease}
+.mobile-menu-toggle[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.mobile-menu-toggle[aria-expanded="true"] span:nth-child(2){opacity:0}
+.mobile-menu-toggle[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+@media (max-width:900px){
+  .site-header .wrap{position:relative}
+  .logo-mark,.header-phone{display:none}
+  .logo{order:1}
+  .header-cta{order:2}
+  .mobile-menu-toggle{display:flex;order:3}
+  nav.main-nav{display:none}
+  nav.main-nav.mobile-open{display:flex;position:absolute;top:calc(100% + 1px);left:16px;right:16px;flex-direction:column;align-items:stretch;gap:0;padding:12px;background:var(--ink-2);border:1px solid var(--ink-line);border-radius:0 0 14px 14px;box-shadow:0 22px 40px rgba(0,0,0,.4);max-height:calc(100vh - 90px);overflow-y:auto;z-index:80}
+  nav.main-nav.mobile-open>a,nav.main-nav.mobile-open .nav-drop-btn{width:100%;padding:13px 12px;text-align:left;justify-content:space-between;color:var(--white)}
+  nav.main-nav.mobile-open a::after{display:none}
+  nav.main-nav.mobile-open .nav-drop::after{display:none}
+  nav.main-nav.mobile-open .nav-drop-panel{position:static;transform:none;margin:0 0 6px;width:100%;grid-template-columns:1fr;box-shadow:none;border-radius:10px;opacity:1}
+  nav.main-nav.mobile-open .nav-drop.open .nav-drop-panel{display:grid;transform:none}
+  nav.main-nav.mobile-open .nav-drop-panel::before{display:none}
+  nav.main-nav.mobile-open .nav-drop-panel .all{grid-column:1}
+}
 @media (max-width:620px){
   .header-phone span{display:none}
-  .site-header .wrap{gap:12px;padding:0 16px}
-  .logo-name{font-size:20px}
-  .header-cta{padding:11px 16px;font-size:14px}
+  .site-header .wrap{gap:8px;padding:0 12px}
+  .logo-name{font-size:18px}
+  .header-cta{padding:10px 12px;font-size:13px;min-height:42px}
 }
 
 /* Hero */
@@ -373,7 +393,7 @@ footer::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;back
       </span>
       <span class="logo-name">Northgate<span>&nbsp;Garage</span></span>
     </a>
-    <nav class="main-nav" aria-label="Main">
+    <nav class="main-nav" id="primaryNav" aria-label="Main">
       <div class="nav-drop">
         <button class="nav-drop-btn" aria-expanded="false" aria-haspopup="true">
           Services
@@ -397,6 +417,9 @@ footer::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;back
       <a href="about.html">About</a>
       <a href="#faq">FAQ</a>
     </nav>
+    <button class="mobile-menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="primaryNav">
+      <span></span><span></span><span></span>
+    </button>
     <a class="header-phone" href="tel:+441632960123" data-track="call">
       <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
       <span>01632 960123</span>
@@ -926,8 +949,29 @@ footer::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;back
   Object.keys(map).forEach(function(id){spy.observe(document.getElementById(id));});
 })();
 </script>
-</body>
+<script>
+(function(){
+  var button=document.querySelector('.mobile-menu-toggle');
+  var nav=document.getElementById('primaryNav');
+  if(!button||!nav)return;
+  function closeMenu(){nav.classList.remove('mobile-open');button.setAttribute('aria-expanded','false');button.setAttribute('aria-label','Open menu');}
+  button.addEventListener('click',function(e){
+    e.stopPropagation();
+    var open=nav.classList.toggle('mobile-open');
+    button.setAttribute('aria-expanded',String(open));
+    button.setAttribute('aria-label',open?'Close menu':'Open menu');
+  });
+  nav.addEventListener('click',function(e){e.stopPropagation();});
+  nav.querySelectorAll('a').forEach(function(a){a.addEventListener('click',closeMenu);});
+  document.addEventListener('click',closeMenu);
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeMenu();});
+  window.addEventListener('resize',function(){if(window.innerWidth>900)closeMenu();});
+})();
+</script></body>
 </html>
+
+
+
 
 
 
