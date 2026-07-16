@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>MOT & Car Servicing in Watford | Northgate Garage — Book Online</title>
 <meta name="description" content="MOT from £45, servicing from £119 in Watford. Book online in 30 seconds. Same-week slots, honest prices, 4.9★ on Google. Northgate Garage — 15 years local.">
+<link rel="preload" as="image" href="assets/img/home-workshop-hero.png" fetchpriority="high">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -162,7 +163,7 @@ nav.main-nav a:hover::after{width:100%}
 }
 
 /* Hero */
-.hero{background:var(--ink);color:var(--white);padding:clamp(56px,8vw,96px) 0 clamp(72px,9vw,104px);position:relative;overflow:hidden}
+.hero{background-color:var(--ink);background-image:linear-gradient(90deg,rgba(8,11,15,.96) 0%,rgba(14,18,23,.88) 48%,rgba(14,18,23,.78) 100%),url("assets/img/home-workshop-hero.png");background-size:cover;background-position:center;color:var(--white);padding:clamp(56px,8vw,96px) 0 clamp(72px,9vw,104px);position:relative;overflow:hidden}
 .hero::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(128deg,rgba(255,255,255,.022) 0 2px,transparent 2px 52px);pointer-events:none}
 .hero::after{content:"";position:absolute;right:-160px;top:-180px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(255,106,21,.16),transparent 62%);pointer-events:none}
 .hero .wrap{display:grid;grid-template-columns:1.12fr .88fr;gap:52px;align-items:center;position:relative;z-index:1}
@@ -188,6 +189,7 @@ nav.main-nav a:hover::after{width:100%}
 @media (max-width:860px){
   .hero .wrap{grid-template-columns:1fr;gap:36px}
   .hero-ctas .btn{flex:1;min-width:160px}
+  .hero{background-position:64% center;background-image:linear-gradient(180deg,rgba(8,11,15,.94),rgba(14,18,23,.88)),url("assets/img/home-workshop-hero.png")}
 }
 @media (max-width:480px){
   .hero-ctas{flex-direction:column}

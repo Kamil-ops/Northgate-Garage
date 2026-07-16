@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PayStream — Design System</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="tokens.css">
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--color-surface-page); color: var(--color-text-primary); font: var(--text-body); }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 48px 32px; }
+  .top { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; }
+  .logo { width: 40px; height: 40px; border-radius: var(--radius-lg); background: var(--color-brand-primary); display: grid; place-items: center; color: #fff; font-weight: 700; }
+  h1 { font: var(--text-display); font-size: 34px; margin: 0; }
+  .sub { font: var(--text-body); color: var(--color-text-secondary); margin: 6px 0 0; max-width: 620px; }
+  section { margin-top: 56px; }
+  section > h2 { font: var(--text-heading); font-size: 20px; border-bottom: 1px solid var(--color-border-strong); padding-bottom: 10px; margin: 0 0 24px; }
+  .kick { font: var(--text-label-sm); letter-spacing: .04em; text-transform: uppercase; color: var(--color-brand-primary); margin: 0 0 12px; }
+  .swrow { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 28px; }
+  .sw { width: 104px; }
+  .sw .chip { height: 60px; border-radius: var(--radius-lg); border: 1px solid var(--color-border-strong); margin-bottom: 6px; }
+  .sw .n { font: var(--text-label-sm); }
+  .sw .h { font: var(--text-caption); color: var(--color-text-muted); }
+  .panel { background: var(--color-surface-card); border: 1px solid var(--color-border-default); border-radius: var(--radius-xl); padding: 28px; }
+  .demo { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; }
+  .trow { display: flex; align-items: baseline; gap: 24px; padding: 12px 0; border-bottom: 1px dashed var(--color-border-default); }
+  .trow .meta { width: 240px; flex: none; font: var(--text-caption); color: var(--color-text-muted); }
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; }
+  .kpi .delta { font: var(--text-caption); }
+  .rbox { width: 64px; height: 64px; background: var(--color-surface-card); border: 1px solid var(--color-border-strong); display: grid; place-items: center; font: var(--text-caption); color: var(--color-text-muted); }
+  .srow { display: flex; align-items: center; gap: 12px; font: var(--text-caption); color: var(--color-text-muted); margin-bottom: 6px; }
+  .srow .bar { height: 16px; background: var(--color-brand-primary); border-radius: 3px; opacity: .25; }
+  .srow .lab { width: 84px; }
+  footer { margin-top: 56px; padding-top: 20px; border-top: 1px solid var(--color-border-default); font: var(--text-caption); color: var(--color-text-muted); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <div class="logo">P</div>
+    <div>
+      <h1>PayStream — Design System</h1>
+    </div>
+  </div>
+  <p class="sub">v2.0 · Tokens mirror the Figma variable collections. Brand teal on a Tailwind-slate neutral base; Inter throughout. Colours and radii are bound to variables in the Figma file.</p>
+
+  <section>
+    <h2>Colour — Primitives</h2>
+    <p class="kick">Slate (neutral)</p>
+    <div class="swrow">
+      <div class="sw"><div class="chip" style="background:#F8FAFC"></div><div class="n">slate/50</div><div class="h">#F8FAFC</div></div>
+      <div class="sw"><div class="chip" style="background:#F1F5F9"></div><div class="n">slate/100</div><div class="h">#F1F5F9</div></div>
+      <div class="sw"><div class="chip" style="background:#E2E8F0"></div><div class="n">slate/200</div><div class="h">#E2E8F0</div></div>
+      <div class="sw"><div class="chip" style="background:#CBD5E1"></div><div class="n">slate/300</div><div class="h">#CBD5E1</div></div>
+      <div class="sw"><div class="chip" style="background:#94A3B8"></div><div class="n">slate/400</div><div class="h">#94A3B8</div></div>
+      <div class="sw"><div class="chip" style="background:#64748B"></div><div class="n">slate/500</div><div class="h">#64748B</div></div>
+      <div class="sw"><div class="chip" style="background:#475569"></div><div class="n">slate/600</div><div class="h">#475569</div></div>
+      <div class="sw"><div class="chip" style="background:#334155"></div><div class="n">slate/700</div><div class="h">#334155</div></div>
+      <div class="sw"><div class="chip" style="background:#1E293B"></div><div class="n">slate/800</div><div class="h">#1E293B</div></div>
+      <div class="sw"><div class="chip" style="background:#0F172A"></div><div class="n">slate/900</div><div class="h">#0F172A</div></div>
+    </div>
+    <p class="kick">Brand &amp; accents</p>
+    <div class="swrow">
+      <div class="sw"><div class="chip" style="background:#0F5F5F"></div><div class="n">teal/brand</div><div class="h">#0F5F5F</div></div>
+      <div class="sw"><div class="chip" style="background:#10B981"></div><div class="n">emerald/500</div><div class="h">#10B981</div></div>
+      <div class="sw"><div class="chip" style="background:#F59E0B"></div><div class="n">amber/500</div><div class="h">#F59E0B</div></div>
+      <div class="sw"><div class="chip" style="background:#EF4444"></div><div class="n">red/500</div><div class="h">#EF4444</div></div>
+      <div class="sw"><div class="chip" style="background:#3B82F6"></div><div class="n">blue/500</div><div class="h">#3B82F6</div></div>
+      <div class="sw"><div class="chip" style="background:#8B5CF6"></div><div class="n">violet/500</div><div class="h">#8B5CF6</div></div>
+      <div class="sw"><div class="chip" style="background:#EC4899"></div><div class="n">pink/500</div><div class="h">#EC4899</div></div>
+    </div>
+    <p class="kick">Semantic</p>
+    <div class="swrow">
+      <div class="sw"><div class="chip" style="background:var(--color-brand-primary)"></div><div class="n">brand/primary</div><div class="h">→ teal</div></div>
+      <div class="sw"><div class="chip" style="background:var(--color-text-primary)"></div><div class="n">text/primary</div><div class="h">→ slate 900</div></div>
+      <div class="sw"><div class="chip" style="background:var(--color-text-secondary)"></div><div class="n">text/secondary</div><div class="h">→ slate 500</div></div>
+      <div class="sw"><div class="chip" style="background:var(--color-success)"></div><div class="n">success</div><div class="h">→ emerald</div></div>
+      <div class="sw"><div class="chip" style="background:var(--color-warning)"></div><div class="n">warning</div><div class="h">→ amber</div></div>
+      <div class="sw"><div class="chip" style="background:var(--color-danger)"></div><div class="n">danger</div><div class="h">→ red</div></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Typography — Inter</h2>
+    <div class="panel">
+      <div class="trow"><div class="meta">Display · 600 · 22 / 1.30</div><span class="ps-display">Dashboard overview</span></div>
+      <div class="trow"><div class="meta">Heading · 600 · 16 / 1.40</div><span class="ps-heading">Revenue vs Target</span></div>
+      <div class="trow"><div class="meta">Title · 700 · 14 / 1.40</div><span class="ps-title">Invoice Status</span></div>
+      <div class="trow"><div class="meta">Body · 400 · 13 / 1.50</div><span class="ps-body">Recent invoices by status, updated in real time.</span></div>
+      <div class="trow"><div class="meta">Label · 500 · 12 / 1.50</div><span class="ps-label">Monthly Revenue</span></div>
+      <div class="trow"><div class="meta">Caption · 500 · 10 / 1.50</div><span class="ps-caption">vs last month</span></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Buttons</h2>
+    <div class="panel demo">
+      <button class="ps-btn ps-btn--primary">Export</button>
+      <button class="ps-btn ps-btn--secondary">Filter</button>
+      <button class="ps-btn ps-btn--destructive">Delete</button>
+      <button class="ps-btn ps-btn--ghost">Cancel</button>
+      <span style="width:1px;height:28px;background:var(--color-border-strong)"></span>
+      <button class="ps-btn ps-btn--primary ps-btn--xs">XS</button>
+      <button class="ps-btn ps-btn--primary ps-btn--sm">SM</button>
+      <button class="ps-btn ps-btn--primary">MD</button>
+      <button class="ps-btn ps-btn--primary ps-btn--lg">LG</button>
+    </div>
+  </section>
+
+  <section>
+    <h2>Status badges</h2>
+    <div class="panel demo">
+      <span class="ps-badge ps-badge--paid">● Paid</span>
+      <span class="ps-badge ps-badge--pending">● Pending</span>
+      <span class="ps-badge ps-badge--overdue">● Overdue</span>
+    </div>
+  </section>
+
+  <section>
+    <h2>KPI cards</h2>
+    <div class="cards">
+      <div class="ps-card kpi"><p class="ps-card__label">Monthly Revenue</p><p class="ps-card__value">$248,500</p><p class="delta" style="color:var(--color-success)">↑ +12.4% vs last month</p></div>
+      <div class="ps-card kpi"><p class="ps-card__label">Overdue Invoices</p><p class="ps-card__value">$31,200</p><p class="delta" style="color:var(--color-danger)">↑ +7.6% more overdue</p></div>
+      <div class="ps-card kpi"><p class="ps-card__label">Avg Invoice Value</p><p class="ps-card__value">$8,230</p><p class="delta" style="color:var(--color-text-muted)">no change</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Radius &amp; Spacing</h2>
+    <p class="kick">Radius</p>
+    <div class="panel demo" style="margin-bottom:20px;">
+      <div class="rbox" style="border-radius:var(--radius-sm)">4</div>
+      <div class="rbox" style="border-radius:var(--radius-md)">6</div>
+      <div class="rbox" style="border-radius:var(--radius-lg)">8</div>
+      <div class="rbox" style="border-radius:var(--radius-xl)">10</div>
+      <div class="rbox" style="border-radius:var(--radius-2xl)">12</div>
+      <div class="rbox" style="border-radius:var(--radius-3xl)">14</div>
+      <div class="rbox" style="border-radius:var(--radius-full)">full</div>
+    </div>
+    <p class="kick">Spacing (2px base)</p>
+    <div class="panel">
+      <div class="srow"><span class="lab">space-2 · 4</span><div class="bar" style="width:4px"></div></div>
+      <div class="srow"><span class="lab">space-4 · 8</span><div class="bar" style="width:8px"></div></div>
+      <div class="srow"><span class="lab">space-6 · 12</span><div class="bar" style="width:12px"></div></div>
+      <div class="srow"><span class="lab">space-8 · 16</span><div class="bar" style="width:16px"></div></div>
+      <div class="srow"><span class="lab">space-12 · 24</span><div class="bar" style="width:24px"></div></div>
+      <div class="srow"><span class="lab">space-20 · 40</span><div class="bar" style="width:40px"></div></div>
+    </div>
+  </section>
+
+  <footer>PayStream Design System v2.0 · tokens mirror the Figma variables · Inter · brand #0F5F5F</footer>
+</div>
+</body>
+</html>

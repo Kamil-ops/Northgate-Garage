@@ -1,0 +1,145 @@
+/* ============================================================
+   PayStream — Design System v2.0
+   Tokens mirror the Figma variable collections:
+   Primitives · Color (semantic) · Radius · Spacing
+   Type: Inter. Brand: teal #0F5F5F on a Tailwind-slate neutral base.
+   Note: the Figma file is drawn at a compact "case-study" scale,
+   so the type ramp is small (9–22px). Scale up uniformly for a
+   production build if desired.
+   ============================================================ */
+
+:root {
+  /* ---------- Primitives: base ---------- */
+  --color-base-white: #FFFFFF;
+
+  /* ---------- Primitives: slate (neutral) ---------- */
+  --color-slate-50:  #F8FAFC;
+  --color-slate-100: #F1F5F9;
+  --color-slate-200: #E2E8F0;
+  --color-slate-300: #CBD5E1;
+  --color-slate-400: #94A3B8;
+  --color-slate-500: #64748B;
+  --color-slate-600: #475569;
+  --color-slate-700: #334155;
+  --color-slate-800: #1E293B;
+  --color-slate-900: #0F172A;
+
+  /* ---------- Primitives: brand + accents ---------- */
+  --color-teal-brand:  #0F5F5F;
+  --color-emerald-500: #10B981;
+  --color-amber-500:   #F59E0B;
+  --color-amber-700:   #B45309;
+  --color-red-500:     #EF4444;
+  --color-blue-500:    #3B82F6;
+  --color-blue-700:    #1D4ED8;
+  --color-violet-500:  #8B5CF6;
+  --color-pink-500:    #EC4899;
+
+  /* ---------- Semantic (aliased to primitives) ---------- */
+  --color-brand-primary:    var(--color-teal-brand);
+  --color-brand-on-primary: var(--color-base-white);
+  --color-text-primary:     var(--color-slate-900);
+  --color-text-secondary:   var(--color-slate-500);
+  --color-text-muted:       var(--color-slate-400);
+  --color-surface-page:     var(--color-slate-50);
+  --color-surface-card:     var(--color-base-white);
+  --color-border-default:   var(--color-slate-100);
+  --color-border-strong:    var(--color-slate-200);
+  --color-success:          var(--color-emerald-500);
+  --color-warning:          var(--color-amber-500);
+  --color-danger:           var(--color-red-500);
+  --color-info:             var(--color-blue-500);
+
+  /* ---------- Radius ---------- */
+  --radius-sm:   4px;
+  --radius-md:   6px;
+  --radius-lg:   8px;
+  --radius-xl:   10px;  /* card default */
+  --radius-2xl:  12px;
+  --radius-3xl:  14px;
+  --radius-full: 999px; /* pills, badges, avatars */
+
+  /* ---------- Spacing (2px base) ---------- */
+  --space-0:  0px;
+  --space-1:  2px;
+  --space-2:  4px;
+  --space-3:  6px;
+  --space-4:  8px;
+  --space-5:  10px;
+  --space-6:  12px;
+  --space-8:  16px;
+  --space-10: 20px;
+  --space-12: 24px;
+  --space-16: 32px;
+  --space-20: 40px;
+
+  /* ---------- Typography ---------- */
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+  --font-mono: "Consolas", "Cousine", ui-monospace, monospace;
+
+  /* type ramp: font: weight size/line-height family */
+  --text-display:   600 22px/1.30 var(--font-sans);
+  --text-heading-lg: 600 18px/1.35 var(--font-sans);
+  --text-heading:   600 16px/1.40 var(--font-sans);
+  --text-title:     700 14px/1.40 var(--font-sans);
+  --text-title-sm:  600 13px/1.45 var(--font-sans);
+  --text-body:      400 13px/1.50 var(--font-sans);
+  --text-body-sm:   400 12px/1.50 var(--font-sans);
+  --text-label:     500 12px/1.50 var(--font-sans);
+  --text-label-sm:  500 11px/1.50 var(--font-sans);
+  --text-caption:   500 10px/1.50 var(--font-sans);
+  --text-micro:     400  9px/1.50 var(--font-sans);
+}
+
+/* ============================================================
+   Component classes
+   ============================================================ */
+
+/* ----- Buttons (PsButton) ----- */
+.ps-btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  gap: var(--space-3);
+  padding: var(--space-4) var(--space-8);
+  border-radius: var(--radius-lg);
+  font: var(--text-label);
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+.ps-btn--primary     { background: var(--color-brand-primary); color: var(--color-brand-on-primary); }
+.ps-btn--secondary   { background: var(--color-surface-card); color: var(--color-text-primary); border-color: var(--color-border-strong); }
+.ps-btn--destructive { background: var(--color-danger); color: var(--color-base-white); }
+.ps-btn--ghost       { background: transparent; color: var(--color-text-secondary); }
+/* sizes */
+.ps-btn--xs { padding: 2px var(--space-4); font: var(--text-caption); }
+.ps-btn--sm { padding: var(--space-2) var(--space-6); font: var(--text-label-sm); }
+.ps-btn--lg { padding: var(--space-6) var(--space-12); font: var(--text-title-sm); }
+
+/* ----- Status badge ----- */
+.ps-badge {
+  display: inline-flex; align-items: center; gap: var(--space-2);
+  padding: var(--space-1) var(--space-4);
+  border-radius: var(--radius-full);
+  font: var(--text-caption);
+  border: 1px solid transparent;
+}
+.ps-badge--paid    { color: var(--color-success); border-color: var(--color-success); background: color-mix(in srgb, var(--color-success) 9%, transparent); }
+.ps-badge--pending { color: var(--color-warning); border-color: var(--color-warning); background: color-mix(in srgb, var(--color-warning) 9%, transparent); }
+.ps-badge--overdue { color: var(--color-danger);  border-color: var(--color-danger);  background: color-mix(in srgb, var(--color-danger) 9%, transparent); }
+
+/* ----- Card / KPI card ----- */
+.ps-card {
+  background: var(--color-surface-card);
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-xl);
+  padding: var(--space-12);
+}
+.ps-card__label { font: var(--text-label-sm); color: var(--color-text-secondary); margin: 0 0 var(--space-4); }
+.ps-card__value { font: var(--text-display); color: var(--color-text-primary); margin: 0; }
+
+/* ----- Typography helpers ----- */
+.ps-display    { font: var(--text-display);    color: var(--color-text-primary); margin: 0; }
+.ps-heading    { font: var(--text-heading);    color: var(--color-text-primary); margin: 0; }
+.ps-title      { font: var(--text-title);      color: var(--color-text-primary); margin: 0; }
+.ps-body       { font: var(--text-body);       color: var(--color-text-secondary); margin: 0; }
+.ps-label      { font: var(--text-label);      color: var(--color-text-secondary); margin: 0; }
+.ps-caption    { font: var(--text-caption);    color: var(--color-text-muted); margin: 0; }

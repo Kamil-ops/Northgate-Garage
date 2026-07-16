@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>MOT Test in Watford — £45, Free Retest | Northgate Garage</title>
 <meta name="description" content="DVSA-approved Class 4 MOT in Watford for £45. Done in under an hour, free retest within 10 working days, every result explained in plain English. Book online in 30 seconds.">
+<link rel="preload" as="image" href="assets/img/mot-workshop-hero.png" fetchpriority="high">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -155,7 +156,7 @@ nav.main-nav a:hover::after{width:100%}
 }
 
 /* Hero */
-.hero{background:var(--ink);color:var(--white);padding:clamp(48px,6vw,76px) 0 clamp(64px,8vw,88px);position:relative;overflow:hidden}
+.hero{background-color:var(--ink);background-image:linear-gradient(90deg,rgba(8,11,15,.96) 0%,rgba(14,18,23,.89) 48%,rgba(14,18,23,.76) 100%),url("assets/img/mot-workshop-hero.png");background-size:cover;background-position:center;color:var(--white);padding:clamp(48px,6vw,76px) 0 clamp(64px,8vw,88px);position:relative;overflow:hidden}
 .hero::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(128deg,rgba(255,255,255,.022) 0 2px,transparent 2px 52px);pointer-events:none}
 .hero::after{content:"";position:absolute;right:-160px;top:-180px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(255,106,21,.16),transparent 62%);pointer-events:none}
 .hero .wrap{display:grid;grid-template-columns:1.14fr .86fr;gap:52px;align-items:center;position:relative;z-index:1}
@@ -185,6 +186,7 @@ nav.main-nav a:hover::after{width:100%}
 @media (max-width:860px){
   .hero .wrap{grid-template-columns:1fr;gap:34px}
   .hero-ctas .btn{flex:1;min-width:160px}
+  .hero{background-position:68% center;background-image:linear-gradient(180deg,rgba(8,11,15,.95),rgba(14,18,23,.89)),url("assets/img/mot-workshop-hero.png")}
 }
 @media (max-width:480px){
   .hero-ctas{flex-direction:column}
@@ -369,7 +371,7 @@ footer::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;back
 .confirm .summary{background:var(--chalk);border-radius:11px;padding:15px 19px;font-size:14px;text-align:left;margin:20px 0;color:var(--ink)}
 @media (max-width:520px){.field-row{grid-template-columns:1fr}.modal{padding:28px 22px}}
 .section-toc{display:none}
-@media (min-width:1400px){
+@media (min-width:1700px){
   .section-toc{display:block;position:fixed;left:24px;top:50%;transform:translateY(-50%);width:196px;z-index:40;background:rgba(255,255,255,.72);backdrop-filter:saturate(160%) blur(10px);border:1px solid var(--line);border-radius:16px;padding:16px 10px;box-shadow:var(--sh-md)}
   .section-toc .toc-label{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--steel-light);margin:0 0 10px 12px}
   .section-toc ul{list-style:none;display:flex;flex-direction:column;gap:1px}
@@ -380,6 +382,7 @@ footer::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;back
   .section-toc a.active::before{background:var(--orange);box-shadow:0 0 0 3px rgba(255,106,21,.18)}
 }
 </style>
+<link rel="stylesheet" href="assets/service-toc-responsive.css">
 </head>
 <body>
 
@@ -493,10 +496,8 @@ footer::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;back
         <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Every advisory explained, nothing hidden</li>
       </ul>
     </div>
-    <!-- IMAGE SLOT — replace this whole div with: <img class="img-slot tall" src="assets/img/mot-bay.jpg" alt="Car being tested in the DVSA-approved MOT bay"> -->
-    <div class="img-slot tall" role="img" aria-label="Photo placeholder: car in the MOT bay">
-      <span class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></span>
-      <span>Workshop photo — MOT bay</span>
+    <div class="img-slot tall">
+      <img src="assets/img/home-workshop-hero.png" alt="Northgate Garage mechanic working on a car in the workshop" loading="lazy" decoding="async" style="object-position:68% center">
     </div>
   </div>
 </section>
@@ -756,9 +757,10 @@ footer::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;back
         <ul>
           <li><a href="mot-watford.html">MOT testing</a></li>
           <li><a href="car-service-watford.html">Car servicing</a></li>
+          <li><a href="brakes.html">Brakes</a></li>
           <li><a href="diagnostics.html">Diagnostics</a></li>
-          <li><a href="brakes.html">Brakes &amp; clutch</a></li>
-          <li><a href="index.html#services">EV &amp; hybrid</a></li>
+          <li><a href="ev-servicing.html">EV &amp; hybrid</a></li>
+          <li><a href="blog.html">Blog &amp; guides</a></li>
         </ul>
       </div>
       <div>
