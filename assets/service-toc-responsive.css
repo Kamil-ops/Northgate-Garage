@@ -3,14 +3,19 @@
   display: flex;
   position: sticky;
   top: 62px;
+  left: auto;
   z-index: 45;
+  transform: none;
   align-items: center;
   gap: 12px;
   width: 100%;
   padding: 10px max(22px, calc((100vw - 1140px) / 2 + 22px));
   background: rgba(255, 255, 255, .96);
   backdrop-filter: blur(10px);
+  border: 0;
   border-bottom: 1px solid var(--line);
+  border-radius: 0;
+  box-shadow: none;
   overflow: hidden;
 }
 .section-toc .toc-label {
@@ -24,6 +29,7 @@
 }
 .section-toc ul {
   display: flex;
+  flex-direction: row;
   gap: 5px;
   min-width: 0;
   margin: 0;
@@ -44,36 +50,4 @@
 }
 .section-toc a:hover { color: var(--ink); background: rgba(14, 18, 23, .04); }
 .section-toc a.active { color: var(--ink); font-weight: 600; background: rgba(255, 106, 21, .09); }
-
-@media (min-width: 1700px) {
-  .section-toc {
-    display: block;
-    position: fixed;
-    left: 24px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 196px;
-    z-index: 40;
-    padding: 16px 10px;
-    background: rgba(255, 255, 255, .72);
-    border: 1px solid var(--line);
-    border-radius: 16px;
-    box-shadow: var(--sh-md);
-    backdrop-filter: saturate(160%) blur(10px);
-  }
-  .section-toc .toc-label { margin: 0 0 10px 12px; }
-  .section-toc ul { flex-direction: column; gap: 1px; overflow: visible; padding: 0; }
-  .section-toc a { position: relative; padding: 8px 12px 8px 26px; white-space: normal; }
-  .section-toc a::before {
-    content: "";
-    position: absolute;
-    left: 11px;
-    top: 50%;
-    width: 6px;
-    height: 6px;
-    transform: translateY(-50%);
-    border-radius: 50%;
-    background: var(--line);
-  }
-  .section-toc a.active::before { background: var(--orange); box-shadow: 0 0 0 3px rgba(255, 106, 21, .18); }
-}
+.section-toc a::before { display: none; }
