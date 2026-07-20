@@ -1,10 +1,18 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en-GB">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Prices — MOT, Servicing &amp; Repairs in Watford | Northgate Garage</title>
-<meta name="description" content="Transparent 'from £' pricing for MOT (£45), servicing (from £119), diagnostics, brakes, clutch, air-con and EV work in Watford. No 'call for a quote' — real starting prices, quoted in writing before work.">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://www.northgategarage.co.uk/pricing.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Northgate Garage">
+<meta property="og:title" content="Garage Prices in Watford">
+<meta property="og:image" content="https://www.northgategarage.co.uk/assets/img/home-workshop-hero.png">
+<meta property="og:image:alt" content="A car being serviced inside Northgate Garage">
+<meta name="twitter:card" content="summary_large_image">
+<title>Prices - MOT, Servicing &amp; Repairs in Watford | Northgate Garage</title>
+<meta name="description" content="Transparent 'from £' pricing for MOT (£45), servicing (from £119), diagnostics, brakes, clutch, air-con and EV work in Watford. No 'call for a quote' - real starting prices, quoted in writing before work.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -236,10 +244,16 @@ nav.main-nav a:hover::after{width:100%}
 .feature-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;margin-top:40px}
 .feature-box{border:1px solid var(--line);border-radius:16px;overflow:hidden;background:var(--white);box-shadow:var(--sh-sm);display:flex;flex-direction:column;transition:transform .22s cubic-bezier(.2,.7,.3,1),box-shadow .22s ease}
 .feature-box:hover{transform:translateY(-4px);box-shadow:var(--sh-md)}
-.feature-box .fimg{aspect-ratio:16/10;position:relative;overflow:hidden;background:var(--grad-ink);display:flex;align-items:center;justify-content:center}
-.feature-box .fimg::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.05) 1px,transparent 1px);background-size:22px 22px}
-.feature-box .fimg .ico{width:54px;height:54px;border-radius:13px;background:rgba(255,106,21,.14);border:1px solid rgba(255,106,21,.3);display:flex;align-items:center;justify-content:center;color:var(--orange);position:relative}
+.feature-box .fimg{height:148px;position:relative;overflow:hidden;background:linear-gradient(145deg,#111820,#202b36);display:flex;align-items:center;justify-content:center}
+.feature-box:nth-child(2) .fimg{background:linear-gradient(145deg,#161b21,#29323b)}
+.feature-box:nth-child(3) .fimg{background:linear-gradient(145deg,#10171b,#1d2b2b)}
+.feature-box .fimg::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 45%,rgba(255,106,21,.18),transparent 42%),repeating-linear-gradient(128deg,rgba(255,255,255,.025) 0 2px,transparent 2px 34px)}
+.feature-box .fimg::after{content:"0" counter(pricing-card);position:absolute;right:18px;bottom:-11px;font-family:var(--font-head);font-size:64px;font-weight:700;color:rgba(255,255,255,.045);line-height:1}
+.feature-grid{counter-reset:pricing-card}
+.feature-box{counter-increment:pricing-card}
+.feature-box .fimg .ico{width:76px;height:76px;border-radius:22px;background:rgba(14,18,23,.8);border:1px solid rgba(255,106,21,.38);display:flex;align-items:center;justify-content:center;position:relative;z-index:1;box-shadow:0 16px 35px rgba(0,0,0,.28),inset 0 0 0 1px rgba(255,255,255,.05)}
 .feature-box .fimg img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.feature-box .fimg .ico img{position:static;width:42px;height:42px;object-fit:contain;filter:invert(51%) sepia(95%) saturate(2525%) hue-rotate(346deg) brightness(102%) contrast(102%)}
 .feature-box .fbody{padding:22px 24px}
 .feature-box h3{font-size:22px;margin-bottom:8px;display:flex;align-items:center;gap:9px}
 .feature-box .tag{font-family:var(--font-body);font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--orange);margin-bottom:10px;display:inline-block}
@@ -275,7 +289,7 @@ nav.main-nav a:hover::after{width:100%}
 .faq-list summary{cursor:pointer;padding:20px 24px;font-weight:600;font-size:16px;color:var(--ink);list-style:none;display:flex;justify-content:space-between;align-items:center;gap:14px}
 .faq-list summary::-webkit-details-marker{display:none}
 .faq-list summary::after{content:"+";font-family:var(--font-head);font-size:28px;color:var(--orange);line-height:1;flex-shrink:0}
-.faq-list details[open] summary::after{content:"–"}
+.faq-list details[open] summary::after{content:"-"}
 .faq-list details p{padding:0 24px 20px;font-size:14.5px;line-height:1.6}
 
 /* Related services (cross-links) */
@@ -355,12 +369,13 @@ footer::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;back
 .price-group .glabel{display:flex;align-items:center;gap:12px;margin-bottom:18px}
 .price-group .glabel::before{content:"";width:26px;height:2px;background:var(--orange);border-radius:2px;flex-shrink:0}
 .price-group .glabel h3{color:var(--white);font-size:clamp(24px,3vw,30px)}
-/* price rows are links on this page — strip underline, add chevron affordance */
+/* price rows are links on this page - strip underline, add chevron affordance */
 .price-row{padding:22px 46px 22px 26px;text-decoration:none;color:inherit;position:relative}
 .price-row::after{content:"\203A";position:absolute;right:24px;top:50%;transform:translateY(-50%);font-family:var(--font-head);font-size:28px;line-height:0;color:var(--ink-line);transition:color .2s ease,transform .2s ease}
 .price-row:hover::after{color:var(--orange);transform:translateY(-50%) translateX(4px)}
 .price-row:focus-visible{outline:3px solid var(--orange);outline-offset:-3px}
 </style>
+<link rel="stylesheet" href="assets/premium-facts-strip.css">
 </head>
 <body>
 
@@ -414,7 +429,7 @@ footer::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;back
   <div class="wrap">
     <p class="crumbs"><a href="index.html">Home</a> / <span class="here">Pricing</span></p>
     <h1>Honest prices, <em>no surprises</em></h1>
-    <p class="sub">Real starting prices on every common job — never "call for a quote". If your car needs more, you get a written quote first and nothing happens until you say yes.</p>
+    <p class="sub">Real starting prices on every common job - never "call for a quote". If your car needs more, you get a written quote first and nothing happens until you say yes.</p>
     <div class="hero-ctas">
       <button class="btn btn-primary" data-open-booking>Book your car in</button>
       <a class="btn btn-ghost" href="tel:+441632960123" data-track="call">
@@ -429,7 +444,7 @@ footer::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;back
   <div class="wrap">
     <span class="kicker">Price list</span>
     <h2>What everything costs</h2>
-    <p style="color:#B4BEC8;max-width:60ch">Prices below are the starting point for a typical car. Tap any row to book it. Larger engines, specialist oils or extra parts can add to the total — we always confirm before we start.</p>
+    <p style="color:#B4BEC8;max-width:60ch">Prices below are the starting point for a typical car. Tap any row to book it. Larger engines, specialist oils or extra parts can add to the total - we always confirm before we start.</p>
 
     <div class="price-group">
       <div class="glabel"><h3>MOT &amp; bundles</h3></div>
@@ -443,7 +458,7 @@ footer::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;back
           <div class="amount free">FREE</div>
         </a>
         <a class="price-row" href="#book" data-open-booking data-service="MOT + full service">
-          <div class="job">MOT + full service<small>Most popular combo — save £34</small></div>
+          <div class="job">MOT + full service<small>Most popular combo - save £34</small></div>
           <div class="amount"><small>from</small>£200</div>
         </a>
         <a class="price-row" href="#book" data-open-booking data-service="MOT + interim service">
@@ -510,7 +525,7 @@ footer::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;back
     <h2>No hidden extras, ever</h2>
     <div class="feature-grid">
       <div class="feature-box">
-        <div class="fimg"><span class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span></div>
+        <div class="fimg"><span class="ico"><img src="assets/icons/Line/SVG/speedometer.svg" alt=""></span></div>
         <div class="fbody">
           <span class="tag">Upfront</span>
           <h3>Real "from" prices</h3>
@@ -518,7 +533,7 @@ footer::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;back
         </div>
       </div>
       <div class="feature-box">
-        <div class="fimg"><span class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg></span></div>
+        <div class="fimg"><span class="ico"><img src="assets/icons/Line/SVG/key.svg" alt=""></span></div>
         <div class="fbody">
           <span class="tag">In writing</span>
           <h3>Quote before work</h3>
@@ -526,7 +541,7 @@ footer::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;back
         </div>
       </div>
       <div class="feature-box">
-        <div class="fimg"><span class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg></span></div>
+        <div class="fimg"><span class="ico"><img src="assets/icons/Line/SVG/car.svg" alt=""></span></div>
         <div class="fbody">
           <span class="tag">No catch</span>
           <h3>Free MOT retest</h3>
@@ -544,7 +559,7 @@ footer::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;back
     <div class="faq-list">
       <details>
         <summary>Are these prices fixed?</summary>
-        <p>The MOT is a fixed £45. Service and repair prices are real "from" starting prices — larger engines, specialist parts or extra work can add to them, and we always confirm the exact figure in writing before we start.</p>
+        <p>The MOT is a fixed £45. Service and repair prices are real "from" starting prices - larger engines, specialist parts or extra work can add to them, and we always confirm the exact figure in writing before we start.</p>
       </details>
       <details>
         <summary>Why don't you just say "call for a quote"?</summary>
@@ -604,7 +619,7 @@ footer::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;back
     <h2>Know the price? Book it.</h2>
     <p>Online in 30 seconds, same-week slots, and a written quote before any extra work.</p>
     <button class="btn btn-dark" data-open-booking>Book your car in</button>
-    <p class="or-call">or call <a href="tel:+441632960123" data-track="call">01632 960123</a> — we answer fast</p>
+    <p class="or-call">or call <a href="tel:+441632960123" data-track="call">01632 960123</a> - we answer fast</p>
   </div>
 </section>
 
@@ -649,13 +664,13 @@ footer::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;back
           <li>12 Northgate Works, Watford</li>
           <li>WD17 1AB</li>
           <li><a href="tel:+441632960123" data-track="call">01632 960123</a></li>
-          <li>Mon–Fri 8:00–17:30 · Sat 8:30–13:00</li>
+          <li>Mon-Fri 8:00-17:30 · Sat 8:30-13:00</li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
       <span>© 2026 Northgate Garage Ltd. All rights reserved.</span>
-      <span><a href="privacy.html" style="color:inherit">Privacy</a> &nbsp;·&nbsp; <a href="terms.html" style="color:inherit">Terms</a></span>
+      <span><a href="privacy.html" style="color:inherit">Privacy</a> &nbsp;·&nbsp; <a href="terms.html" style="color:inherit">Terms</a> &nbsp;·&nbsp; <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" style="color:inherit" title="Demo social link">Instagram</a> &nbsp;·&nbsp; <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" style="color:inherit" title="Demo social link">Facebook</a> &nbsp;·&nbsp; <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" style="color:inherit" title="Demo social link">YouTube</a></span>
     </div>
   </div>
 </footer>
@@ -682,14 +697,14 @@ footer::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;back
         <div class="field">
           <label for="bkService">Service</label>
           <select id="bkService" required>
-            <option value="MOT test">MOT test — from £45</option>
-            <option value="Interim service">Interim service — from £119</option>
-            <option value="Full service">Full service — from £189</option>
-            <option value="Diagnostics">Diagnostics — from £49</option>
-            <option value="Brakes">Brakes — from £120 per axle</option>
-            <option value="Air conditioning">Air-con regas — from £59</option>
-            <option value="EV / hybrid service">EV / hybrid service — from £99</option>
-            <option value="Clutch">Clutch — from £450</option>
+            <option value="MOT test">MOT test - from £45</option>
+            <option value="Interim service">Interim service - from £119</option>
+            <option value="Full service">Full service - from £189</option>
+            <option value="Diagnostics">Diagnostics - from £49</option>
+            <option value="Brakes">Brakes - from £120 per axle</option>
+            <option value="Air conditioning">Air-con regas - from £59</option>
+            <option value="EV / hybrid service">EV / hybrid service - from £99</option>
+            <option value="Clutch">Clutch - from £450</option>
             <option value="Something else">Something else</option>
           </select>
         </div>
@@ -716,7 +731,7 @@ footer::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;back
         <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
       </div>
       <h3>Request received</h3>
-      <p>Thanks — we'll text you to confirm your slot, usually within the hour (or first thing tomorrow if it's out of hours).</p>
+      <p>Thanks - we'll text you to confirm your slot, usually within the hour (or first thing tomorrow if it's out of hours).</p>
       <div class="summary" id="confirmSummary"></div>
       <p style="font-size:13.5px;color:var(--steel-light)">Need it sooner? Call <a href="tel:+441632960123" style="color:var(--orange);font-weight:600" data-track="call">01632 960123</a></p>
     </div>

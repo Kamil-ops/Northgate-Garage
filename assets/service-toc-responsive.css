@@ -51,3 +51,37 @@
 .section-toc a:hover { color: var(--ink); background: rgba(14, 18, 23, .04); }
 .section-toc a.active { color: var(--ink); font-weight: 600; background: rgba(255, 106, 21, .09); }
 .section-toc a::before { display: none; }
+
+/* Real workshop photography replaces the old portrait placeholder treatment. */
+.explain img.img-slot.tall {
+  display: block;
+  width: 100%;
+  height: clamp(320px, 34vw, 440px);
+  aspect-ratio: auto;
+  object-fit: cover;
+  object-position: center;
+}
+
+.feature-box .fimg {
+  background-position: center !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+}
+
+.feature-box .fimg > img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+img[src$="diagnostic-scan.png"] { object-position: 52% center; }
+img[src$="brake-inspection.png"] { object-position: 46% center; }
+img[src$="customer-handover.png"] { object-position: center 42%; }
+
+@media (max-width: 760px) {
+  .explain img.img-slot.tall {
+    height: min(72vw, 360px);
+  }
+}

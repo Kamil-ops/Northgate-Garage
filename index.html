@@ -1,10 +1,18 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en-GB">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MOT & Car Servicing in Watford | Northgate Garage — Book Online</title>
-<meta name="description" content="MOT from £45, servicing from £119 in Watford. Book online in 30 seconds. Same-week slots, honest prices, 4.9★ on Google. Northgate Garage — 15 years local.">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://www.northgategarage.co.uk/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Northgate Garage">
+<meta property="og:title" content="MOT and Car Servicing in Watford">
+<meta property="og:image" content="https://www.northgategarage.co.uk/assets/img/home-workshop-hero.png">
+<meta property="og:image:alt" content="A car being serviced inside Northgate Garage">
+<meta name="twitter:card" content="summary_large_image">
+<title>MOT & Car Servicing in Watford | Northgate Garage - Book Online</title>
+<meta name="description" content="MOT from £45, servicing from £119 in Watford. Book online in 30 seconds. Same-week slots, honest prices, 4.9★ on Google. Northgate Garage - 15 years local.">
 <link rel="preload" as="image" href="assets/img/home-workshop-hero.png" fetchpriority="high">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -39,9 +47,9 @@
   "mainEntity": [
     { "@type": "Question", "name": "How long does an MOT take?", "acceptedAnswer": { "@type": "Answer", "text": "A standard MOT takes about 45 minutes to an hour. You're welcome to wait in our reception or drop the keys and collect later the same day." } },
     { "@type": "Question", "name": "What happens if my car fails its MOT?", "acceptedAnswer": { "@type": "Answer", "text": "We'll explain exactly what failed and why, in plain English, with a written quote before any work starts. Fix it with us within 10 working days and the retest is free." } },
-    { "@type": "Question", "name": "Can I book an MOT and service together?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — the MOT and full service combo is our most popular booking and saves you money versus booking separately." } },
+    { "@type": "Question", "name": "Can I book an MOT and service together?", "acceptedAnswer": { "@type": "Answer", "text": "Yes - the MOT and full service combo is our most popular booking and saves you money versus booking separately." } },
     { "@type": "Question", "name": "Do you work on electric and hybrid cars?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Our technicians are IMI-certified for EV and hybrid work, including battery health checks and high-voltage system servicing." } },
-    { "@type": "Question", "name": "How do I pay?", "acceptedAnswer": { "@type": "Answer", "text": "Card, cash, Apple Pay and Google Pay. You only pay when the work is done — no deposits for standard bookings." } },
+    { "@type": "Question", "name": "How do I pay?", "acceptedAnswer": { "@type": "Answer", "text": "Card, cash, Apple Pay and Google Pay. You only pay when the work is done - no deposits for standard bookings." } },
     { "@type": "Question", "name": "Is there parking or a key drop?", "acceptedAnswer": { "@type": "Answer", "text": "Free customer parking on the forecourt, and a secure key-drop box by the front door for early drop-offs from 7am." } }
   ]
 }
@@ -197,12 +205,21 @@ nav.main-nav a:hover::after{width:100%}
   .hero-ctas .btn{width:100%;flex:none}
 }
 
-/* Trust strip */
-.trust-strip{background:var(--white);border-bottom:1px solid var(--line);padding:24px 0}
-.trust-strip .wrap{display:flex;align-items:center;justify-content:center;gap:14px 44px;flex-wrap:wrap}
-.trust-item{display:flex;align-items:center;gap:10px;font-size:14px;font-weight:500;color:var(--ink)}
-.trust-item svg{color:var(--green);flex-shrink:0}
-.trust-item .g-rating{font-weight:700}
+/* Trust marquee */
+.trust-strip{position:relative;overflow:hidden;background:linear-gradient(180deg,#fff,#f8f8f6);border-block:1px solid var(--line);padding:17px 0}
+.trust-strip::before,.trust-strip::after{content:"";position:absolute;inset-block:0;width:clamp(32px,7vw,120px);z-index:2;pointer-events:none}
+.trust-strip::before{left:0;background:linear-gradient(90deg,#fff 20%,transparent)}
+.trust-strip::after{right:0;background:linear-gradient(-90deg,#fff 20%,transparent)}
+.trust-track{display:flex;width:max-content;will-change:transform;animation:trustMarquee 34s linear infinite}
+.trust-group{display:flex;align-items:center;gap:18px;flex-shrink:0;padding-right:18px}
+.trust-item{display:flex;align-items:center;gap:11px;min-height:52px;padding:7px 18px 7px 8px;white-space:nowrap;background:rgba(255,255,255,.92);border:1px solid rgba(14,18,23,.1);border-radius:999px;box-shadow:0 8px 24px rgba(14,18,23,.06);font-size:13.5px;font-weight:600;color:var(--ink)}
+.trust-icon{display:grid;place-items:center;width:36px;height:36px;flex:0 0 36px;border-radius:50%;background:var(--ink);box-shadow:inset 0 0 0 1px rgba(255,255,255,.1),0 4px 12px rgba(14,18,23,.16)}
+.trust-icon img{width:20px;height:20px;object-fit:contain;filter:invert(51%) sepia(95%) saturate(2525%) hue-rotate(346deg) brightness(102%) contrast(102%)}
+.trust-item .g-rating{font-weight:800}
+.trust-strip:hover .trust-track{animation-play-state:paused}
+@keyframes trustMarquee{from{transform:translate3d(0,0,0)}to{transform:translate3d(-25%,0,0)}}
+@media (max-width:600px){.trust-track{animation-duration:27s}.trust-item{font-size:13px}}
+@media (prefers-reduced-motion:reduce){.trust-strip{overflow-x:auto}.trust-strip::before,.trust-strip::after{display:none}.trust-track{animation:none;padding-inline:16px}.trust-group[aria-hidden="true"]{display:none}}
 
 /* Services */
 .services{background:var(--chalk);position:relative}
@@ -293,7 +310,7 @@ nav.main-nav a:hover::after{width:100%}
 .faq-list summary{cursor:pointer;padding:20px 24px;font-weight:600;font-size:16px;color:var(--ink);list-style:none;display:flex;justify-content:space-between;align-items:center;gap:14px}
 .faq-list summary::-webkit-details-marker{display:none}
 .faq-list summary::after{content:"+";font-family:var(--font-head);font-size:28px;color:var(--orange);line-height:1;flex-shrink:0;transition:transform .2s ease}
-.faq-list details[open] summary::after{content:"–";transform:rotate(0)}
+.faq-list details[open] summary::after{content:"-";transform:rotate(0)}
 .faq-list details p{padding:0 24px 20px;font-size:14.5px;line-height:1.6}
 
 /* Final CTA */
@@ -404,7 +421,7 @@ footer::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;back
   <div class="wrap">
     <div>
       <h1>MOT &amp; car servicing<br>in <em>Watford</em></h1>
-      <p class="sub">Book online in 30 seconds. Same-week slots, honest prices, no jargon. MOT from £45 — free retest included.</p>
+      <p class="sub">Book online in 30 seconds. Same-week slots, honest prices, no jargon. MOT from £45 - free retest included.</p>
       <div class="hero-ctas">
         <button class="btn btn-primary" data-open-booking>
           <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18M9 16l2 2 4-4"/></svg>
@@ -419,7 +436,7 @@ footer::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;back
     </div>
     <div class="reg-card">
       <h3>Check your MOT date</h3>
-      <p>Enter your reg — we'll show when your MOT is due and find you a slot.</p>
+      <p>Enter your reg - we'll show when your MOT is due and find you a slot.</p>
       <form id="regForm" class="reg-row" novalidate>
         <input class="reg-input" id="regInput" type="text" inputmode="text" autocomplete="off" maxlength="8" placeholder="AB12 CDE" aria-label="Vehicle registration">
         <button class="btn btn-primary" type="submit">Check</button>
@@ -429,28 +446,36 @@ footer::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;back
   </div>
 </section>
 
-<div class="trust-strip">
-  <div class="wrap">
-    <span class="trust-item">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .6l3.1 6.3 6.9 1-5 4.9 1.2 6.9L12 16.5l-6.2 3.2L7 12.8 2 7.9l6.9-1z"/></svg>
-      <span class="g-rating">4.9 on Google</span>&nbsp;· 312 reviews
-    </span>
-    <span class="trust-item">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
-      DVSA approved MOT station
-    </span>
-    <span class="trust-item">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l7 4v6c0 5-3.5 8.5-7 10-3.5-1.5-7-5-7-10V6z"/></svg>
-      Good Garage Scheme member
-    </span>
-    <span class="trust-item">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="5"/><path d="M9 13l-1.5 8L12 18.5 16.5 21 15 13"/></svg>
-      IMI-certified technicians
-    </span>
-    <span class="trust-item">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-      Serving Watford since 2011
-    </span>
+<div class="trust-strip" aria-label="Northgate Garage credentials">
+  <div class="trust-track">
+    <div class="trust-group">
+      <span class="trust-item"><span class="trust-icon"><img src="assets/icons/Line/SVG/spotlight.svg" alt=""></span><span><span class="g-rating">4.9 on Google</span> · 312 reviews</span></span>
+      <span class="trust-item"><span class="trust-icon"><img src="assets/icons/Line/SVG/speedometer.svg" alt=""></span>DVSA approved MOT station</span>
+      <span class="trust-item"><span class="trust-icon"><img src="assets/icons/Line/SVG/car.svg" alt=""></span>Good Garage Scheme member</span>
+      <span class="trust-item"><span class="trust-icon"><img src="assets/icons/Line/SVG/gear belt.svg" alt=""></span>IMI-certified technicians</span>
+      <span class="trust-item"><span class="trust-icon"><img src="assets/icons/Line/SVG/key.svg" alt=""></span>Serving Watford since 2011</span>
+    </div>
+    <div class="trust-group" aria-hidden="true">
+      <span class="trust-item"><span class="trust-icon"><img src="assets/icons/Line/SVG/spotlight.svg" alt=""></span><span><span class="g-rating">4.9 on Google</span> · 312 reviews</span></span>
+      <span class="trust-item"><span class="trust-icon"><img src="assets/icons/Line/SVG/speedometer.svg" alt=""></span>DVSA approved MOT station</span>
+      <span class="trust-item"><span class="trust-icon"><img src="assets/icons/Line/SVG/car.svg" alt=""></span>Good Garage Scheme member</span>
+      <span class="trust-item"><span class="trust-icon"><img src="assets/icons/Line/SVG/gear belt.svg" alt=""></span>IMI-certified technicians</span>
+      <span class="trust-item"><span class="trust-icon"><img src="assets/icons/Line/SVG/key.svg" alt=""></span>Serving Watford since 2011</span>
+    </div>
+    <div class="trust-group" aria-hidden="true">
+      <span class="trust-item"><span class="trust-icon"><img src="assets/icons/Line/SVG/spotlight.svg" alt=""></span><span><span class="g-rating">4.9 on Google</span> · 312 reviews</span></span>
+      <span class="trust-item"><span class="trust-icon"><img src="assets/icons/Line/SVG/speedometer.svg" alt=""></span>DVSA approved MOT station</span>
+      <span class="trust-item"><span class="trust-icon"><img src="assets/icons/Line/SVG/car.svg" alt=""></span>Good Garage Scheme member</span>
+      <span class="trust-item"><span class="trust-icon"><img src="assets/icons/Line/SVG/gear belt.svg" alt=""></span>IMI-certified technicians</span>
+      <span class="trust-item"><span class="trust-icon"><img src="assets/icons/Line/SVG/key.svg" alt=""></span>Serving Watford since 2011</span>
+    </div>
+    <div class="trust-group" aria-hidden="true">
+      <span class="trust-item"><span class="trust-icon"><img src="assets/icons/Line/SVG/spotlight.svg" alt=""></span><span><span class="g-rating">4.9 on Google</span> · 312 reviews</span></span>
+      <span class="trust-item"><span class="trust-icon"><img src="assets/icons/Line/SVG/speedometer.svg" alt=""></span>DVSA approved MOT station</span>
+      <span class="trust-item"><span class="trust-icon"><img src="assets/icons/Line/SVG/car.svg" alt=""></span>Good Garage Scheme member</span>
+      <span class="trust-item"><span class="trust-icon"><img src="assets/icons/Line/SVG/gear belt.svg" alt=""></span>IMI-certified technicians</span>
+      <span class="trust-item"><span class="trust-icon"><img src="assets/icons/Line/SVG/key.svg" alt=""></span>Serving Watford since 2011</span>
+    </div>
   </div>
 </div>
 
@@ -458,7 +483,7 @@ footer::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;back
   <div class="wrap">
     <span class="kicker">What we do</span>
     <h2>Services, priced upfront</h2>
-    <p style="max-width:60ch">No "call for a quote". Every job below has a real starting price — and if anything could push it higher, we tell you before we touch the car.</p>
+    <p style="max-width:60ch">No "call for a quote". Every job below has a real starting price - and if anything could push it higher, we tell you before we touch the car.</p>
     <div class="services-grid">
       <a class="service-card" href="mot-watford.html">
         <span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.14,9.92l1.39-1.39c.29-.29,.29-.77,0-1.06s-.77-.29-1.06,0l-1.01,1.01-.4-2.02c-.26-1.28-1.39-2.21-2.7-2.21H7.64c-1.31,0-2.44,.93-2.7,2.21l-.4,2.02-1.01-1.01c-.29-.29-.77-.29-1.06,0s-.29,.77,0,1.06l1.39,1.39c-.97,.68-1.61,1.8-1.61,3.08v3c0,.96,.79,1.75,1.75,1.75h.25v1.25c0,.96,.79,1.75,1.75,1.75h2c.96,0,1.75-.79,1.75-1.75v-1.25h4.5v1.25c0,.96,.79,1.75,1.75,1.75h2c.96,0,1.75-.79,1.75-1.75v-1.25h.25c.96,0,1.75-.79,1.75-1.75v-3c0-1.27-.64-2.4-1.61-3.08ZM6.41,6.75c.12-.58,.63-1,1.23-1h8.72c.59,0,1.11,.42,1.23,1l.5,2.5H5.92l.5-2.5Zm1.84,12.25c0,.14-.11,.25-.25,.25h-2c-.14,0-.25-.11-.25-.25v-1.25h2.5v1.25Zm10,0c0,.14-.11,.25-.25,.25h-2c-.14,0-.25-.11-.25-.25v-1.25h2.5v1.25Zm2-3c0,.14-.11,.25-.25,.25H4c-.14,0-.25-.11-.25-.25v-3c0-1.24,1.01-2.25,2.25-2.25h12c1.24,0,2.25,1.01,2.25,2.25v3Z"/><path class="acc" d="M7.5,11.25c-1.24,0-2.25,1.01-2.25,2.25s1.01,2.25,2.25,2.25,2.25-1.01,2.25-2.25-1.01-2.25-2.25-2.25Zm0,3c-.41,0-.75-.34-.75-.75s.34-.75,.75-.75,.75,.34,.75,.75-.34,.75-.75,.75Z"/><path class="acc" d="M16.5,11.25c-1.24,0-2.25,1.01-2.25,2.25s1.01,2.25,2.25,2.25,2.25-1.01,2.25-2.25-1.01-2.25-2.25-2.25Zm0,3c-.41,0-.75-.34-.75-.75s.34-.75,.75-.75,.75,.34,.75,.75-.34,.75-.75,.75Z"/></svg></span>
@@ -485,7 +510,7 @@ footer::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;back
         <span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.89,5.11c-1.84-1.84-4.29-2.86-6.89-2.86s-5.05,1.01-6.89,2.86c-1.84,1.84-2.86,4.29-2.86,6.89s1.01,5.05,2.86,6.89c1.84,1.84,4.29,2.86,6.89,2.86s5.05-1.01,6.89-2.86c1.84-1.84,2.86-4.29,2.86-6.89s-1.01-5.05-2.86-6.89Zm-1.06,12.73c-1.56,1.56-3.63,2.42-5.83,2.42s-4.28-.86-5.83-2.42c-1.56-1.56-2.42-3.63-2.42-5.83s.86-4.28,2.42-5.83c1.56-1.56,3.63-2.42,5.83-2.42s4.28,.86,5.83,2.42c1.56,1.56,2.42,3.63,2.42,5.83s-.86,4.28-2.42,5.83Z"/><path class="acc" d="M12,6.25c-1.54,0-2.98,.6-4.07,1.68s-1.68,2.53-1.68,4.07,.6,2.98,1.68,4.07,2.53,1.68,4.07,1.68,2.98-.6,4.07-1.68,1.68-2.53,1.68-4.07-.6-2.98-1.68-4.07-2.53-1.68-4.07-1.68Zm3.48,8.17l-1.09-1.09c.23-.4,.36-.86,.36-1.33s-.13-.93-.36-1.33l1.09-1.09c1.01,1.45,1.01,3.39,0,4.84Zm-4.37-1.54c-.24-.24-.37-.55-.37-.88s.13-.65,.37-.88,.55-.37,.88-.37,.65,.13,.88,.37,.37,.55,.37,.88-.13,.65-.37,.88c-.47,.47-1.29,.47-1.77,0Zm-2.6,1.54c-1.01-1.45-1.01-3.39,0-4.84l1.09,1.09c-.23,.4-.36,.86-.36,1.33s.13,.93,.36,1.33l-1.09,1.09Zm5.9-5.9l-1.1,1.1c-.82-.43-1.83-.43-2.65,0l-1.1-1.1c.73-.51,1.57-.77,2.42-.77s1.7,.26,2.42,.77Zm-4.84,6.96l1.09-1.09c.4,.23,.86,.36,1.33,.36s.93-.13,1.33-.36l1.09,1.09c-1.45,1.01-3.39,1.01-4.84,0Z"/></svg></span>
         <h3>Brakes</h3>
         <p class="price">from £120 per axle</p>
-        <p>Pads, discs and fluid — fitted same day in most cases.</p>
+        <p>Pads, discs and fluid - fitted same day in most cases.</p>
         <span class="go">View brake repairs →</span>
       </a>
       <a class="service-card" href="diagnostics.html">
@@ -528,7 +553,7 @@ footer::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;back
       <div class="step">
         <div class="num">1</div>
         <h3>Enter your reg</h3>
-        <p>Pick a service and a date that suits you — online, any time of day.</p>
+        <p>Pick a service and a date that suits you - online, any time of day.</p>
       </div>
       <div class="step">
         <div class="num">2</div>
@@ -563,7 +588,7 @@ footer::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;back
         <div class="amount"><small>from</small>£189</div>
       </a>
       <a class="price-row" href="car-service-watford.html">
-        <div class="job">MOT + full service<small>Our most popular combo — save £34</small></div>
+        <div class="job">MOT + full service<small>Our most popular combo - save £34</small></div>
         <div class="amount"><small>from</small>£200</div>
       </a>
     </div>
@@ -587,11 +612,11 @@ footer::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;back
         <span><span class="stars" aria-hidden="true">★★★★★</span><br>312 Google reviews</span>
       </div>
     </div>
-    <!-- Placeholder cards — replace with live Google Reviews feed (Places API) at integration stage -->
+    <!-- Placeholder cards - replace with live Google Reviews feed (Places API) at integration stage -->
     <div class="reviews-grid">
       <div class="review-card">
         <div class="stars" aria-hidden="true">★★★★★</div>
-        <p>"Booked the MOT online at 11pm, dropped the keys at 8, car was done by lunch. They found a bulb out and just sorted it — no drama, no upsell."</p>
+        <p>"Booked the MOT online at 11pm, dropped the keys at 8, car was done by lunch. They found a bulb out and just sorted it - no drama, no upsell."</p>
         <div class="reviewer">
           <span class="avatar">SM</span>
           <span><span class="name">Sarah M.</span><br><span class="meta">Google review · 2 weeks ago</span></span>
@@ -607,7 +632,7 @@ footer::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;back
       </div>
       <div class="review-card">
         <div class="stars" aria-hidden="true">★★★★★</div>
-        <p>"Quoted £120 less than the main dealer for the same brake job, used proper parts, and had it done the same day. Honest garage — rare thing."</p>
+        <p>"Quoted £120 less than the main dealer for the same brake job, used proper parts, and had it done the same day. Honest garage - rare thing."</p>
         <div class="reviewer">
           <span class="avatar">AK</span>
           <span><span class="name">Amina K.</span><br><span class="meta">Google review · 1 month ago</span></span>
@@ -626,15 +651,15 @@ footer::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;back
       <div class="info-list">
         <div class="info-row">
           <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          <div><strong>Address</strong>12 Northgate Works, Station Road, Watford WD17 1AB — 4 minutes from Watford Junction</div>
+          <div><strong>Address</strong>12 Northgate Works, Station Road, Watford WD17 1AB - 4 minutes from Watford Junction</div>
         </div>
         <div class="info-row">
           <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
           <div>
             <strong>Opening hours</strong>
             <table class="hours">
-              <tr><td>Monday – Friday</td><td>8:00 – 17:30</td></tr>
-              <tr><td>Saturday</td><td>8:30 – 13:00</td></tr>
+              <tr><td>Monday - Friday</td><td>8:00 - 17:30</td></tr>
+              <tr><td>Saturday</td><td>8:30 - 13:00</td></tr>
               <tr><td>Sunday</td><td>Closed</td></tr>
             </table>
           </div>
@@ -672,7 +697,7 @@ footer::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;back
       </details>
       <details>
         <summary>Can I book an MOT and service together?</summary>
-        <p>Yes — the MOT and full service combo is our most popular booking and saves £34 versus booking them separately.</p>
+        <p>Yes - the MOT and full service combo is our most popular booking and saves £34 versus booking them separately.</p>
       </details>
       <details>
         <summary>Do you work on electric and hybrid cars?</summary>
@@ -680,7 +705,7 @@ footer::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;back
       </details>
       <details>
         <summary>How do I pay?</summary>
-        <p>Card, cash, Apple Pay and Google Pay. You only pay when the work is done — no deposits for standard bookings.</p>
+        <p>Card, cash, Apple Pay and Google Pay. You only pay when the work is done - no deposits for standard bookings.</p>
       </details>
       <details>
         <summary>Is there parking or a key drop?</summary>
@@ -695,7 +720,7 @@ footer::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;back
     <h2>MOT due? Sort it now.</h2>
     <p>Takes 30 seconds. Same-week slots. Free retest included.</p>
     <button class="btn btn-dark" data-open-booking>Book your MOT online</button>
-    <p class="or-call">or call <a href="tel:+441632960123" data-track="call">01632 960123</a> — we answer fast</p>
+    <p class="or-call">or call <a href="tel:+441632960123" data-track="call">01632 960123</a> - we answer fast</p>
   </div>
 </section>
 
@@ -737,8 +762,8 @@ footer::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;back
       <div>
         <h4>Hours</h4>
         <ul>
-          <li>Mon–Fri: 8:00 – 17:30</li>
-          <li>Sat: 8:30 – 13:00</li>
+          <li>Mon-Fri: 8:00 - 17:30</li>
+          <li>Sat: 8:30 - 13:00</li>
           <li>Sun: Closed</li>
           <li>Key drop from 7:00</li>
         </ul>
@@ -746,7 +771,7 @@ footer::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;back
     </div>
     <div class="footer-bottom">
       <span>© 2026 Northgate Garage Ltd. All rights reserved.</span>
-      <span><a href="privacy.html" style="color:inherit">Privacy</a> &nbsp;·&nbsp; <a href="terms.html" style="color:inherit">Terms</a></span>
+      <span><a href="privacy.html" style="color:inherit">Privacy</a> &nbsp;·&nbsp; <a href="terms.html" style="color:inherit">Terms</a> &nbsp;·&nbsp; <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" style="color:inherit" title="Demo social link">Instagram</a> &nbsp;·&nbsp; <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" style="color:inherit" title="Demo social link">Facebook</a> &nbsp;·&nbsp; <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" style="color:inherit" title="Demo social link">YouTube</a></span>
     </div>
   </div>
 </footer>
@@ -773,15 +798,15 @@ footer::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;back
         <div class="field">
           <label for="bkService">Service</label>
           <select id="bkService" required>
-            <option value="MOT test">MOT test — from £45</option>
-            <option value="Interim service">Interim service — from £119</option>
-            <option value="Full service">Full service — from £189</option>
-            <option value="MOT + full service">MOT + full service — from £200</option>
-            <option value="Brakes">Brakes — from £120 per axle</option>
-            <option value="Diagnostics">Diagnostics — from £49</option>
-            <option value="Air conditioning">Air con regas — from £59</option>
-            <option value="Clutch">Clutch — quote</option>
-            <option value="EV / hybrid service">EV / hybrid service — from £99</option>
+            <option value="MOT test">MOT test - from £45</option>
+            <option value="Interim service">Interim service - from £119</option>
+            <option value="Full service">Full service - from £189</option>
+            <option value="MOT + full service">MOT + full service - from £200</option>
+            <option value="Brakes">Brakes - from £120 per axle</option>
+            <option value="Diagnostics">Diagnostics - from £49</option>
+            <option value="Air conditioning">Air con regas - from £59</option>
+            <option value="Clutch">Clutch - quote</option>
+            <option value="EV / hybrid service">EV / hybrid service - from £99</option>
             <option value="Something else">Something else</option>
           </select>
         </div>
@@ -808,7 +833,7 @@ footer::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;back
         <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
       </div>
       <h3>Request received</h3>
-      <p>Thanks — we'll text you to confirm your slot, usually within the hour (or first thing tomorrow if it's out of hours).</p>
+      <p>Thanks - we'll text you to confirm your slot, usually within the hour (or first thing tomorrow if it's out of hours).</p>
       <div class="summary" id="confirmSummary"></div>
       <p style="font-size:13.5px;color:var(--steel-light)">Need it sooner? Call <a href="tel:+441632960123" style="color:var(--orange);font-weight:600" data-track="call">01632 960123</a></p>
     </div>
@@ -879,7 +904,7 @@ footer::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;back
   var today=new Date(); today.setDate(today.getDate()+1);
   bkDate.min=today.toISOString().split('T')[0];
 
-  /* Booking submit — front-end stub. Wire to the booking system API here. */
+  /* Booking submit - front-end stub. Wire to the booking system API here. */
   bookingForm.addEventListener('submit',function(e){
     e.preventDefault();
     if(!bookingForm.checkValidity()){ bookingForm.reportValidity(); return; }
@@ -894,20 +919,49 @@ footer::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;back
     track('booking_submit',{service:service});
   });
 
-  /* Reg lookup — front-end stub. Wire to the DVLA/DVSA MOT history API here. */
+  /* Reg lookup - calls the /api/reg-lookup serverless function (DVLA VES + DVSA MOT
+     History). On a plain static host the endpoint isn't there, so it falls back to
+     local demo data and the flow still works. Drop in the API key to go fully live. */
   document.getElementById('regForm').addEventListener('submit',function(e){
     e.preventDefault();
     var reg=regInput.value.trim().toUpperCase();
     var result=document.getElementById('regResult');
     if(!reg){ regInput.focus(); return; }
+    result.classList.add('show');
+    result.innerHTML='<em style="color:#8794A1;font-size:13px">Checking '+reg+'…</em>';
+    track('reg_lookup',{});
+    lookupReg(reg).then(function(data){ renderRegResult(result,reg,data); });
+  });
+
+  function lookupReg(reg){
+    return fetch('/api/reg-lookup',{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({registrationNumber:reg})
+    }).then(function(r){
+      var ct=r.headers.get('content-type')||'';
+      if(ct.indexOf('application/json')===-1) return demoReg(reg); // static host: no backend
+      return r.json();
+    }).catch(function(){ return demoReg(reg); }); // network / no backend → demo
+  }
+
+  function demoReg(reg){
     var due=new Date(); due.setDate(due.getDate()+34);
-    var dueStr=due.toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'});
-    result.innerHTML='<strong>'+reg+'</strong> — MOT due <span class="due">'+dueStr+'</span> <em style="color:#8794A1;font-size:12.5px">(demo data)</em><br>'+
+    return {mock:true,registration:reg,make:'Ford',model:'Focus',colour:'Blue',fuelType:'Petrol',
+      motDueLabel:due.toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'})};
+  }
+
+  function renderRegResult(result,reg,d){
+    if(d && d.error){ result.innerHTML='<span style="color:#c0392b">'+d.error+'</span>'; return; }
+    var parts=[d.make,d.model,d.colour?'· '+d.colour:''].filter(Boolean).join(' ');
+    var tag=d.mock?' <em style="color:#8794A1;font-size:12.5px">(demo data)</em>':'';
+    result.innerHTML='<strong>'+reg+'</strong>'+(parts?' - '+parts:'')+tag+'<br>'+
+      'MOT due <span class="due">'+(d.motDueLabel||'date unavailable')+'</span><br>'+
       '<button class="btn btn-primary" style="margin-top:10px;padding:10px 18px;font-size:14.5px" data-book-from-reg>Book this MOT now</button>';
     result.classList.add('show');
-    result.querySelector('[data-book-from-reg]').addEventListener('click',function(){ openModal('MOT test'); });
-    track('reg_lookup',{});
-  });
+    var b=result.querySelector('[data-book-from-reg]');
+    if(b) b.addEventListener('click',function(){ openModal('MOT test'); });
+  }
 
   document.querySelectorAll('[data-track="call"]').forEach(function(el){
     el.addEventListener('click',function(){ track('click_to_call',{}); });
@@ -978,7 +1032,6 @@ footer::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;back
 })();
 </script></body>
 </html>
-
 
 
 
